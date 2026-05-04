@@ -1,67 +1,88 @@
-<div style="font-family: 'Inter', sans-serif; color: #1a1a1a; max-width: 850px; margin: auto; padding: 40px; border: 1px solid #ddd; background: #fff;">
-    
-    <!-- Institutional Header -->
-    <header style="border-bottom: 4px solid #1a1a1a; padding-bottom: 20px; margin-bottom: 30px;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-            <div>
-                <h1 style="font-family: 'JetBrains Mono', monospace; font-size: 26px; margin: 0; color: #000;">03B // YIELD SHIELD AUDIT</h1>
-                <p style="font-size: 11px; color: #666; text-transform: uppercase; letter-spacing: 2px; margin: 5px 0 0 0;">LHA Rate Verification & Risk Mitigation Strategy</p>
-            </div>
-            <div style="text-align: right;">
-                <span style="background: #d9534f; color: #fff; padding: 6px 15px; font-family: 'JetBrains Mono'; font-size: 12px; font-weight: bold;">OFFICIAL PROOF</span>
-            </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=JetBrains+Mono:wght@500&display=swap');
+        
+        body { background: #ffffff; padding: 40px; font-family: 'Inter', sans-serif; color: #000; }
+        .audit-wrapper { max-width: 950px; margin: auto; border: 12px solid #000; padding: 60px; }
+        
+        header { border-bottom: 8px solid #000; padding-bottom: 30px; margin-bottom: 50px; }
+        .title { font-size: 64px; font-weight: 900; line-height: 0.9; letter-spacing: -3px; text-transform: uppercase; }
+        .subtitle { font-family: 'JetBrains Mono'; font-size: 16px; color: #d9534f; margin-top: 20px; letter-spacing: 3px; font-weight: bold; }
+
+        /* ULTRA-READABLE FINANCIALS */
+        .financial-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-bottom: 60px; }
+        .stat-group { border-left: 10px solid #000; padding-left: 30px; }
+        .stat-group label { display: block; font-size: 16px; text-transform: uppercase; color: #666; font-weight: 800; margin-bottom: 10px; }
+        .stat-group .value { font-size: 72px; font-weight: 900; color: #000; letter-spacing: -4px; line-height: 1; }
+        .stat-group .sub-label { font-size: 18px; color: #d9534f; font-weight: 700; margin-top: 10px; }
+
+        /* THE PROOF FRAME */
+        .section-label { font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 25px; background: #000; color: #fff; display: inline-block; padding: 5px 20px; }
+        .image-frame { border: 5px solid #000; padding: 20px; background: #fff; margin-bottom: 60px; }
+        .image-frame img { width: 100%; display: block; filter: grayscale(100%) contrast(1.2); }
+
+        /* VALUE-ADD JUSTIFICATION */
+        .premium-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .premium-item { background: #f4f4f4; padding: 30px; border-top: 5px solid #d9534f; }
+        .premium-item h3 { font-size: 24px; margin: 0 0 15px 0; text-transform: uppercase; font-weight: 900; }
+        .premium-item p { font-size: 18px; margin: 0; font-weight: 500; line-height: 1.4; color: #333; }
+
+        footer { margin-top: 80px; text-align: left; font-family: 'JetBrains Mono'; font-size: 14px; color: #000; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="audit-wrapper">
+    <header>
+        <div class="title">Yield Shield<br>Analysis</div>
+        <div class="subtitle">ESTATE SPARK // ASSET: WN4 GARSWOOD // 2026.04</div>
     </header>
 
-    <!-- The Evidence: VOA Screenshot Placeholder -->
-    <section style="margin-bottom: 35px;">
-        <h3 style="font-size: 14px; text-transform: uppercase; color: #333; margin-bottom: 15px; border-left: 4px solid #d9534f; padding-left: 10px;">
-            Exhibit A: Valuation Office Agency (VOA) Data Extraction
-        </h3>
-        <div style="border: 2px solid #1a1a1a; padding: 10px; background: #f4f4f4; text-align: center;">
-            <!-- [PASTE YOUR SCREENSHOT URL HERE OR DRAG IMAGE INTO PDF] -->
-            <p style="font-size: 12px; color: #666; margin-bottom: 10px;">Official LHA Rate for WN4 Postcode (Category B)</p>
-            <div style="background: #fff; border: 1px dashed #999; padding: 40px; font-weight: bold; font-size: 22px;">
-                £143.84 PER WEEK
-            </div>
-            <p style="font-size: 10px; color: #888; margin-top: 10px; font-style: italic;">Verified Source: lha-direct.voa.gov.uk (2026/27 Cycle)</p>
+    <div class="financial-hero">
+        <div class="stat-group">
+            <label>LHA Monthly Floor</label>
+            <div class="value">£575.36</div>
+            <div class="sub-label">Government Guaranteed (4-Week Cycle)</div>
         </div>
-    </section>
-
-    <!-- Financial Integrity Table -->
-    <section style="margin-bottom: 30px;">
-        <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
-            <thead>
-                <tr style="background: #1a1a1a; color: #fff;">
-                    <th style="padding: 12px; text-align: left;">Metric</th>
-                    <th style="padding: 12px; text-align: right;">Verified Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td style="padding: 12px; border-bottom: 1px solid #eee;">Weekly LHA Rate</td>
-                    <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">£143.84</td>
-                </tr>
-                <tr>
-                    <td style="padding: 12px; border-bottom: 1px solid #eee;">Monthly Guaranteed Income (Floor)</td>
-                    <td style="padding: 12px; border-bottom: 1px solid #eee; text-align: right; font-weight: bold;">£623.31</td>
-                </tr>
-                <tr style="background: #f9f9f9;">
-                    <td style="padding: 12px; border-bottom: 2px solid #1a1a1a;"><strong>Annual Rental Protection</strong></td>
-                    <td style="padding: 12px; border-bottom: 2px solid #1a1a1a; text-align: right; font-weight: bold; color: #d9534f;">£7,479.68</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-
-    <!-- Strategic Conclusion -->
-    <div style="background: #eee; padding: 20px; border-left: 8px solid #1a1a1a;">
-        <p style="margin: 0; font-size: 14px; line-height: 1.6;">
-            <strong>THESIS:</strong> At a purchase price of <strong>£120,000</strong>, this asset is secured by a government-backed <strong>6.23% Net Yield floor</strong>. This is <u>before</u> accounting for private market premiums. The state-backed subsidy ensures debt coverage is maintained regardless of wider economic contraction.
-        </p>
+        <div class="stat-group">
+            <label>Target Market Rent</label>
+            <div class="value">£875.00</div>
+            <div class="sub-label">Asset-Specific Premium Target</div>
+        </div>
     </div>
 
-    <footer style="margin-top: 40px; font-size: 10px; color: #999; text-align: center; text-transform: uppercase;">
-        Certified by Estate Spark Performance Marketing | Agency Founder: [Your Name]
+    <div class="section-label">Official VOA Verification</div>
+    <div class="image-frame">
+        <!-- LINK TO YOUR SCREENSHOT -->
+        <img src="https://raw.githubusercontent.com/ESTATESPARK/Estate-Spark/main/LHA_PROOF_WN4.jpg" alt="Official LHA Data">
+    </div>
+
+    <div class="section-label">Why We Exceed the Floor</div>
+    <div class="premium-grid">
+        <div class="premium-item">
+            <h3>+ Garage</h3>
+            <p>High-demand utility storage. Increases rental desirability by 15% in WN4.</p>
+        </div>
+        <div class="premium-item">
+            <h3>+ Parking</h3>
+            <p>Private off-road bays. Critical for modern professional tenant profiles.</p>
+        </div>
+        <div class="premium-item">
+            <h3>+ End-Terrace</h3>
+            <p>Premium positioning. Larger plot size and maximum residential privacy.</p>
+        </div>
+        <div class="premium-item">
+            <h3>+ Refurb</h3>
+            <p>Institutional grade finish targets top-tier market rental deciles.</p>
+        </div>
+    </div>
+
+    <footer>
+        CERTIFIED AUDIT BY ESTATE SPARK // ASSET ACQUISITION STRATEGY
     </footer>
 </div>
+
+</body>
+</html>
