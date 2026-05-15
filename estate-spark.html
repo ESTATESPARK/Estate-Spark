@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=0.3">
+    <title>Estate Spark | International Digital Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+    <style>
+        :root { --gold: #c5a059; --navy: #0a1128; --white: #ffffff; --bg: #f8f9fa; }
+        body { font-family: 'Inter', sans-serif; margin: 0; background: var(--bg); color: var(--navy); line-height: 1.6; }
+        .container { width: 1100px; margin: 0 auto; }
+        nav { background: #fff; padding: 25px 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 24px; text-decoration: none; color: var(--navy); }
+        .nav-links a { text-decoration: none; color: var(--navy); margin-left: 30px; font-weight: 600; font-size: 13px; text-transform: uppercase; }
+        .hero { padding: 100px 0; background: var(--navy); color: #fff; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 60px 0; }
+        .card { background: #fff; padding: 40px; border-radius: 8px; border: 1px solid #eee; text-align: center; }
+        .price { font-size: 32px; font-weight: 800; color: var(--gold); display: block; margin: 20px 0; }
+        .buy-btn { background: var(--navy); color: #fff; padding: 15px 30px; border: none; font-weight: 700; cursor: pointer; width: 100%; border-radius: 4px; }
+        footer { background: #fff; padding: 60px 0; border-top: 1px solid #eee; font-size: 13px; }
+        .mor-box { background: #f4f4f4; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">ESTATE SPARK</a>
+            <div class="nav-links">
+                <a href="#pricing">Pricing</a>
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="refunds.html">Refunds</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </div>
+    <section class="hero">
+        <h1>Global Digital Growth Mandates</h1>
+        <p>Premium Web Assistance & High-Performance Digital Assets</p>
+    </section>
+    <div class="container" id="pricing">
+        <div class="grid">
+            <div class="card">
+                <h3>Resume Alpha Kit</h3>
+                <span class="price">£3.99</span>
+                <p>Comprehensive digital kit for career advancement. Instant delivery.</p>
+                <button class="buy-btn paddle_button" data-product="YOUR_ID_1">Buy Now</button>
+            </div>
+            <div class="card">
+                <h3>Technical Web Audit</h3>
+                <span class="price">£150.00</span>
+                <p>Forensic analysis of your digital footprint. 5-day delivery.</p>
+                <button class="buy-btn paddle_button" data-product="YOUR_ID_2">Order Audit</button>
+            </div>
+            <div class="card">
+                <h3>Strategic Consulting</h3>
+                <span class="price">£450.00</span>
+                <p>Monthly operational support for international agencies.</p>
+                <button class="buy-btn paddle_button" data-product="YOUR_ID_3">Retain Now</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <div class="mor-box">
+                <strong>Merchant of Record Statement:</strong> Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders. Paddle provides all customer service inquiries and handles returns.
+            </div>
+            <p>&copy; 2026 Estate Spark. <a href="terms.html">Terms</a> | <a href="privacy.html">Privacy</a> | <a href="refunds.html">Refunds</a> | <a href="contact.html">Contact</a></p>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        Paddle.Setup({ vendor: YOUR_VENDOR_ID });
+    </script>
+</body>
+</html>
