@@ -8,21 +8,75 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
 
 /* ========================================== */
-        /* AUTHENTICATED GOLD SECURE BLUR CODES       */
+        /* ELITE INSTITUTIONAL GOLD VAULT DATA WALL   */
         /* ========================================== */
-        .vdr-locked {
-            color: transparent; /* Hides original text color */
-            text-shadow: 0 0 4px #A8864D; /* Creates the golden glow */
-            font-weight: 700;
-            user-select: none; /* Prevents copying text */
+        .vdr-locked-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             cursor: not-allowed;
-            display: inline;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        .vdr-locked:hover {
-            text-shadow: 0 0 4px #C5A059; /* Shifts to a brighter gold on hover */
+        /* The Gold Vault Text Blur Blur */
+        .vdr-locked-text {
+            color: transparent !important;
+            text-shadow: 0 0 7px #A8864D !important; /* Premium Matte Gold Blur */
+            font-weight: 700;
+            user-select: none !important;
+            -webkit-user-select: none;
+            transition: text-shadow 0.3s ease;
         }
-		
+
+        /* Floating Security Badge Overlay */
+        .vdr-locked-container::after {
+            content: "🔒 SECURE DATA ROOM GATED";
+            position: absolute;
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            background-color: #0F172A; /* Deep Navy Shell */
+            border: 1px solid #A8864D;  /* Gold Trim Accent */
+            padding: 3px 8px;
+            border-radius: 3px;
+            white-space: nowrap;
+            opacity: 0.85;
+            transform: scale(0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 10;
+        }
+
+        /* Dynamic Hover States: Seamless Micro-Animations */
+        .vdr-locked-container:hover {
+            background-color: rgba(168, 134, 77, 0.08); /* Soft gold ambient glow backdrop */
+        }
+
+        .vdr-locked-container:hover .vdr-locked-text {
+            text-shadow: 0 0 5px #C5A059 !important; /* Gold shifts focus depth slightly */
+        }
+
+        /* The Lock Badge scale-up and click-invite transformation */
+        .vdr-locked-container:hover::after {
+            content: "🔒 ACCESS GATED — DEPOSIT £500 TO EXTRACT";
+            opacity: 1;
+            transform: scale(1.03);
+            background-color: #BE123C; /* Institutional Alert Crimson on hover */
+            border-color: #FECDD3;
+            box-shadow: 0 10px 15px -3px rgba(190, 18, 60, 0.3);
+            animation: lockPulse 0.6s ease-in-out infinite alternate;
+        }
+
+        /* High-fidelity pulse loop for maximum click urgency */
+        @keyframes lockPulse {
+            0% { transform: scale(1.03); }
+            100% { transform: scale(1.06); }
+        }		
         :root {
             --navy: #0F172A;
             --gold: #A8864D;
@@ -835,8 +889,8 @@
 
     <div style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 30px;">
         <h2 style="font-size: 20px; font-weight: 900; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; margin: 0;">
-            🏛️ 07. Geospatial & Infrastructure Underwriting
-        </h2>
+           <span class="vdr-locked-container"> 🏛️ 07. Geospatial & Infrastructure Underwriting
+        </h2></span>
         <p style="font-size: 11px; font-weight: 700; color: #b22222; text-transform: uppercase; margin-top: 4px;">
             Strategic Site Analysis: WN4 Logistics Corridor
         </p>
