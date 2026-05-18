@@ -2,358 +2,214 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1200, initial-scale=0.3, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes">
-    <title>Investor NCND: WN-2026-ALPHA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estate Spark // Non-Circumvention & Non-Disclosure Mandate</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-
-        /* ========================================== */
-        /* INSTITUTIONAL CORE VARIABLES               */
-        /* ========================================== */
         :root {
-            --navy: #0F172A;
-            --gold: #A8864D;
-            --danger: #BE123C;
-            --slate-50: #F8FAFC;
-            --slate-200: #E2E8F0;
-            --slate-600: #475569;
             --slate-900: #0F172A;
+            --slate-800: #1E293B;
+            --slate-700: #334155;
+            --gold-600: #A8864D;
+            --gold-500: #C5A880;
+            --emerald-600: #059669;
+            --neutral-100: #F8FAFC;
+            --border-color: #E2E8F0;
         }
-
-        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #334155;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0A0F1D;
+            color: var(--neutral-100);
             margin: 0;
-            padding: 40px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 40px 20px;
+            line-height: 1.6;
         }
 
-        /* A4 Page Container Matrix */
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            background: white;
-            padding: 60px;
-            margin-bottom: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Decorative Background Shield */
-        .page::before {
-            content: "SECURITY PROTOCOL";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 90px;
-            font-weight: 900;
-            color: rgba(168, 134, 77, 0.015);
-            z-index: 0;
-            pointer-events: none;
-            letter-spacing: 4px;
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #131B2E;
+            border: 1px solid var(--slate-800);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
 
         header {
-            position: relative;
-            z-index: 1;
-            border-bottom: 4px solid var(--navy);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
+            border-bottom: 2px solid var(--gold-600);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        .status-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .status-pill {
-            background: var(--navy);
-            color: white;
-            padding: 6px 16px;
-            font-size: 11px;
+        header h1 {
+            color: var(--neutral-100);
+            font-size: 26px;
             font-weight: 800;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
+            margin: 0 0 5px 0;
             text-transform: uppercase;
         }
 
-        .ref-code {
-            font-size: 14px;
-            color: var(--slate-600);
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 34px;
-            font-weight: 800;
-            color: var(--navy);
+        header p {
+            color: var(--gold-500);
             margin: 0;
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            text-transform: uppercase;
-        }
-
-        .sub-h1 {
-            color: var(--gold);
-            font-size: 16px;
-            font-weight: 700;
-            margin-top: 10px;
-            text-transform: uppercase;
+            font-size: 14px;
             letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        section { margin-bottom: 35px; position: relative; z-index: 1; }
+        section {
+            margin-bottom: 30px;
+        }
 
         h2 {
-            font-size: 16px;
-            background: var(--navy);
-            color: white;
-            padding: 8px 18px;
-            display: inline-block;
-            margin-bottom: 20px;
-            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
+            font-size: 15px;
             font-weight: 800;
+            color: var(--gold-500);
+            border-left: 4px solid var(--gold-600);
+            padding-left: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 25px 0 15px 0;
         }
 
-        /* Premium Parameter Information Grid */
-        .parameters-grid {
-            background-color: var(--slate-50);
-            border-left: 4px solid var(--gold);
-            padding: 20px;
-            margin: 20px 0;
+        p, li {
             font-size: 14px;
-            line-height: 1.6;
+            color: #94A3B8;
+            text-align: justify;
         }
 
-        .grid-wrapper {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 8px;
-        }
-
-        /* Scannable Content Blocks */
-        .protocol-box {
-            font-size: 14px;
-            background: #FAFAFA;
-            padding: 20px;
-            border: 1px solid var(--slate-200);
-            border-radius: 4px;
-            line-height: 1.6;
-            color: var(--slate-900);
-        }
-
-        .protocol-item {
-            margin-bottom: 10px;
-        }
-        .protocol-item:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Shielded Bullet Structures */
-        .shield-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 0;
-        }
-
-        .shield-list li {
-            position: relative;
-            padding-left: 28px;
-            margin-bottom: 14px;
-            font-size: 14px;
-            color: var(--slate-900);
-            line-height: 1.6;
-        }
-
-        .shield-list li::before {
-            content: "🛡️";
-            position: absolute;
-            left: 0;
-            top: 2px;
-            font-size: 13px;
-        }
-
-        /* Crimson Warning Manifest Box */
         .manifest-box {
-            background-color: #FFF1F2;
-            border: 1px solid #FECDD3;
+            background: #0F172A;
+            border: 1px solid var(--slate-800);
+            border-radius: 6px;
             padding: 20px;
-            border-radius: 4px;
             margin-top: 15px;
         }
 
         .manifest-tag {
+            display: inline-block;
+            background: rgba(168, 134, 77, 0.15);
+            color: var(--gold-500);
             font-size: 11px;
-            font-weight: 800;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--danger);
-            display: block;
             margin-bottom: 12px;
         }
 
         .manifest-row {
-            font-size: 14.5px;
+            font-size: 13.5px;
+            color: #CBD5E1;
             margin-bottom: 12px;
-            color: #1A1A1A;
-            line-height: 1.6;
-        }
-        .manifest-row:last-of-type {
-            margin-bottom: 0;
+            line-height: 1.5;
         }
 
         .highlight-badge {
-            color: var(--danger);
-            font-weight: 800;
-            background-color: #FDF2F2;
-            padding: 3px 8px;
+            background: var(--emerald-600);
+            color: #FFF;
+            font-weight: 700;
+            padding: 2px 6px;
             border-radius: 3px;
-            font-family: monospace;
-        }
-
-        /* Corporate Sign-off Infrastructure */
-        .signature-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            border-top: 1px dashed var(--slate-200);
-            padding-top: 30px;
-        }
-
-        .sig-block {
             font-size: 13px;
-            line-height: 1.6;
         }
 
-        .sig-line {
-            width: 100%;
-            height: 1px;
-            background-color: #000000;
-            margin-top: 50px;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            margin-top: 60px;
-            border-top: 1px solid var(--slate-200);
-            padding-top: 20px;
+        /* E-SIGNATURE CAPTURE COMPONENT */
+        .esign-container {
+            margin-top: 40px;
+            background: #0A0F1D;
+            border: 2px dashed var(--gold-600);
+            border-radius: 6px;
+            padding: 25px;
             text-align: center;
-            font-size: 11px;
-            color: #94A3B8;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        @media print {
-            body { background: none; padding: 0; }
-            .page { box-shadow: none; margin: 0; }
+        .esign-title {
+            color: var(--neutral-100);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .esign-subtitle {
+            color: #64748B;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: #FFF;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
 
-<div class="page">
+<div class="container">
     <header>
-        <div class="status-header">
-            <span class="status-pill">Confidential / Proprietary Instrument</span>
-            <span class="ref-code">REF: WN-2026-ALPHA</span>
-        </div>
-        <h1>Non-Circumvention &amp; Non-Disclosure Agreement</h1>
-        <div class="sub-h1">Investor Allocation &amp; Fee Protection Protocol</div>
+        <h1>Estate Spark</h1>
+        <p>Virtual Data Room Secure Gateway // NCND Mandate</p>
     </header>
 
     <section>
-        <h2>🏛️ 01. Schedule of Engagement Parameters</h2>
-        <div class="parameters-grid">
-            <div class="grid-wrapper">
-                <strong>REGISTRATION DATE:</strong> <span>17 May 2026</span>
-                <strong>DISCLOSING BROKER:</strong> <span>Estate Spark (Awais Razia)</span>
-                <strong>RECEIVING BUYER:</strong> <span>[Insert Investor Name / Corporate Entity]</span>
-            </div>
-        </div>
+        <h2>01. Purpose &amp; Confidentiality Perimeter</h2>
+        <p>This Legally Binding Non-Circumvention &amp; Non-Disclosure Agreement defines the strict data protocols governing Asset Allocation: <strong>WN-2026-ALPHA (382 Garswood Road)</strong>. The Receiving Party agrees to treat all transaction metrics, legal variables, and vendor statuses with absolute commercial secrecy.</p>
     </section>
 
     <section>
-        <h2>🏛️ 02. Purpose of Disclosure</h2>
-        <div class="protocol-box">
-            <div class="protocol-item"><strong>• Target Allocation:</strong> Real Estate Asset Suite — REF: WN-2026-ALPHA</div>
-            <div class="protocol-item"><strong>• Data Scope:</strong> Proprietary market-derived comparables, virtual data room (VDR) legal twins, localized underwriting core models, and specialized Schedule of Works (SoW) parameters.</div>
-            <div class="protocol-item"><strong>• Intended Execution:</strong> Information is supplied exclusively for the Receiving Buyer to run corporate evaluation paths for potential acquisition through the Estate Spark pipeline.</div>
-        </div>
+        <h2>02. Non-Circumvention Enforcement</h2>
+        <p>The Receiving Party explicitly covenants that they will not bypass, circumvent, or avoid Estate Spark by initiating direct communication, transaction execution, or legal pairing with the target asset's listing brokers, executors, heirs, or solicitors without the explicit corporate written authorization of Estate Spark.</p>
     </section>
 
     <section>
-        <h2>🏛️ 03. The Un-Bypassable Shield (Client Protection)</h2>
-        <p style="font-size: 14px; color: var(--slate-900); line-height: 1.6; margin-bottom: 15px;">
-            To secure the integrity of this proprietary transaction framework, the Receiving Buyer explicitly commits to the following restrictive covenants:
-        </p>
-        <ul class="shield-list">
-            <li>
-                <strong>Exclusive Deal Ownership:</strong> Any off-market deal framework, financial positioning model, or asset profile introduced remains the exclusive intellectual property of Estate Spark.
-            </li>
-            <li>
-                <strong>Anti-Sourcing Parameters:</strong> The Buyer is strictly barred from initiating back-channel communication paths with the property vendor, estate executors, heirs, or the primary high-street listing agency (David Davies Sales &amp; Lettings) to bypass the Disclosing Broker.
-            </li>
-            <li>
-                <strong>Data Boundary Enforcement:</strong> All secure links, unredacted street coordinates, and architectural twin files are restricted. Distribution to external alternative brokers or third-party syndicates without prior written consent from Awais Razia is prohibited.
-            </li>
-        </ul>
+        <h2>03. Term &amp; Structural Validity</h2>
+        <p>This mandate remains contractually active and fully enforceable for a period of twenty-four (24) months from the date of execution. Should breach occur, the disclosing broker retains full rights to immediately launch global legal performance remedies.</p>
     </section>
 
     <section>
-        <h2>🏛️ 04. Procurement Fee &amp; Exchange Manifest</h2>
+        <h2>04. Sourcing Procurement Framework</h2>
         <div class="manifest-box">
             <span class="manifest-tag">Mandatory Performance Conditions</span>
             
             <div class="manifest-row">
-                <strong>• Commitment Balance Deposit:</strong> A non-refundable digital allocation clearing of <span class="highlight-badge">£500</span> is executed immediately to grant gateway access to the unredacted digital asset files.
+                <strong>• Single Unified Fee:</strong> A single, total transaction sourcing fee of <span class="highlight-badge">£2,000 Flat</span> is permanently allocated to this property transaction. No entry deposits or initial reservation sums are required.
             </div>
             
             <div class="manifest-row">
-                <strong>• Exchange Payout Mandate:</strong> The remaining fee balance of <span class="highlight-badge">£1,500</span> is fully locked and must be transferred electronically via BACS to Estate Spark’s designated coordinates **within 24 hours of the legal exchange of contracts** or signature execution on the underlying asset.
+                <strong>• Exchange Payout Mandate:</strong> The total contract balance of <strong>£2,000</strong> is completely locked and due electronically via corporate BACS transfer to Estate Spark's designated bank account **within 24 hours of the formal legal exchange of contracts** between the Buyer and Vendor solicitors.
             </div>
             
             <div class="manifest-row">
-                <strong>• Liquidated Damages Condition:</strong> If the Buyer bypasses this protocol and acquires an interest in the target asset behind Estate Spark's back, they become immediately and directly liable for the full procurement fee structure as an actionable financial debt.
+                <strong>• Solicitor Independence Rule:</strong> This procurement payout obligation is triggered immediately upon the exchange of contracts. It operates completely **independent of third-party solicitors** or escrow distributions. The Buyer assumes direct personal and corporate liability for passing the £2,000 directly to Estate Spark at exchange.
+            </div>
+
+            <div class="manifest-row">
+                <strong>• Circumvention Liquidated Damages:</strong> If the Buyer attempts to acquire an interest in target asset WN-2026-ALPHA behind Estate Spark's back, they remain directly and immediately liable for the full £2,000 procurement fee as an undisputed corporate debt.
             </div>
         </div>
     </section>
 
-    <section>
-        <h2>🏛️ 05. Authority &amp; Jurisdictional Binding</h2>
-        <p style="font-size: 14px; color: var(--slate-600); line-height: 1.6; margin-bottom: 35px;">
-            Digital signature execution, or the explicit opening and downloading of tracked unredacted data packs within the virtual room interface after receiving this framework ledger, serves as absolute legal authorization under the laws of England and Wales.
-        </p>
-
-        <div class="signature-grid">
-            <div class="sig-block">
-                <strong>For Disclosing Broker (Estate Spark):</strong>
-                <div class="sig-line"></div>
-                <span style="font-weight: 700;">Awais Razia | CEO &amp; Principal Analyst</span><br>
-                <span style="color: var(--slate-600);">Date: 17 May 2026</span>
-            </div>
-            <div class="sig-block">
-                <strong>For Receiving Buyer (Investor Client):</strong>
-                <div class="sig-line"></div>
-                <span style="font-weight: 700;">Authorized Signature / General Partner</span><br>
-                <span style="color: var(--slate-600);">Date: ________________________</span>
-            </div>
+    <div class="esign-container">
+        <div class="esign-title">✍️ Secure Digital Execution Gateway</div>
+        <div class="esign-subtitle">Review the terms above and securely execute this legal mandate using the interactive portal below.</div>
+        
+        <div class="iframe-wrapper">
+            <iframe src="https://www.signwell.com/your-actual-embed-link-here"></iframe>
         </div>
-    </section>
-
-    <footer>
-        © 2026 Estate Spark Capital Operations Network. Protected under Institutional NCND Data Tracking Protocols.
-    </footer>
+    </div>
 </div>
 
 </body>
