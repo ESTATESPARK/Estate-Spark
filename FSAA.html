@@ -560,25 +560,53 @@
         </div>
     </section>
 
-    <section>
-        <h2>🏛️ 05. AUTHORITY &amp; BINDING FRAMEWORK</h2>
+ <h2>🏛️ 05. AUTHORITY &amp; BINDING FRAMEWORK</h2>
         <p style="font-size: 14px; color: #475569; line-height: 1.6; margin-bottom: 35px;">
             Acceptance of the introduced buyer’s profile details via tracking email channels or signature execution marks immediate contractual authorization under the jurisdiction of the laws of England and Wales.
         </p>
 
+        <form id="sparkFormspreeOutbox" action="https://formspree.io/f/mwvzpyqy" method="POST" style="display:none;">
+            <input type="hidden" name="Subject_Line" value="URGENT: Adam Signed Your FSAA Agreement Contract">
+            <input type="text" name="Authorized_Signer" id="hiddenSignerName" value="Adam / Branch Manager">
+            <input type="text" name="Execution_Date" id="hiddenDate" value="19 May 2026">
+            <input type="text" name="Drawn_Signature_Link" id="hiddenSignatureData">
+        </form>
+
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px dashed #E2E8F0; padding-top: 30px;">
-            <div style="font-size: 13px; line-height: 1.5;">
+            
+            <div style="font-size: 13px; line-height: 1.5; color: #334155;">
                 <strong>For Sub-Agent (Estate Spark):</strong>
-                <div style="width: 100%; height: 1px; background-color: #000000; margin-top: 50px; margin-bottom: 10px;"></div>
-                <span style="font-weight: 700;">Awais Razia | CEO &amp; Principal Analyst</span><br>
-                <span style="color: #666;">Date: 17 May 2026</span>
+                <div style="font-family: 'Brush Script MT', cursive, sans-serif; font-size: 24px; color: #0F172A; margin-top: 20px; margin-bottom: 5px; padding-left: 10px;">
+                    Awais Razia
+                </div>
+                <div style="width: 100%; height: 1px; background-color: #000000; margin-bottom: 10px;"></div>
+                <span style="font-weight: 700; color: #000;">Awais Razia | CEO &amp; Principal Analyst</span><br>
+                <span style="color: #64748B;">Date: 19 May 2026</span>
             </div>
-            <div style="font-size: 13px; line-height: 1.5;">
+            
+            <div style="font-size: 13px; line-height: 1.5; color: #334155;">
                 <strong>For Principal Agent (David Davies Lettings):</strong>
-                <div style="width: 100%; height: 1px; background-color: #000000; margin-top: 50px; margin-bottom: 10px;"></div>
-                <span style="font-weight: 700;">Authorized Signature / Branch Manager</span><br>
-                <span style="color: #666;">Date: ________________________</span>
+                
+                <div style="position: relative; width: 100%; height: 80px; background-color: #F8FAFC; border: 1px dashed #A8864D; border-radius: 4px; margin-top: 10px; margin-bottom: 5px; overflow: hidden;">
+                    <canvas id="adamSignaturePad" style="position: absolute; top:0; left:0; width:100%; height:100%; cursor: crosshair; touch-action: none;"></canvas>
+                </div>
+                
+                <div style="width: 100%; height: 1px; background-color: #000000; margin-bottom: 10px;"></div>
+                <span style="font-weight: 700; color: #000;">Authorized Signature / Branch Manager</span><br>
+                <span style="color: #64748B;">Date: 19 May 2026</span>
+                
+                <div id="padControls" style="margin-top: 8px; display: flex; gap: 10px;">
+                    <button type="button" id="clearPadBtn" style="background: none; border: 1px solid #CBD5E1; color: #64748B; padding: 4px 8px; font-size: 11px; border-radius: 3px; cursor: pointer;">Clear Board</button>
+                    <span style="font-size: 11px; color: #94A3B8; align-self: center;">Draw using finger or mouse</span>
+                </div>
             </div>
+        </div>
+
+        <div style="margin-top: 40px; text-align: center;">
+            <button type="button" id="submitAgreementBtn" style="width: 100%; max-width: 400px; background-color: #A8864D; color: #FFFFFF; border: none; padding: 14px 24px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; cursor: pointer; transition: background 0.2s;">
+                Execute &amp; Secure FSAA Agreement
+            </button>
+            <div id="executionReceipt" style="margin-top: 15px; font-family: monospace; font-size: 12px; color: #059669; font-weight: 700; display: none;"></div>
         </div>
     </section>
 
@@ -587,4 +615,127 @@
     </footer>
 </div>
 
+<script>
+    const canvas = document.getElementById('adamSignaturePad');
+    const ctx = canvas.getContext('2d');
+    const clearBtn = document.getElementById('clearPadBtn');
+    const submitBtn = document.getElementById('submitAgreementBtn');
+    const receiptBox = document.getElementById('executionReceipt');
+    const padControls = document.getElementById('padControls');
+
+    let isDrawing = false;
+
+    // Adjust canvas layout mapping logic
+    function resizeCanvas() {
+        const rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        ctx.strokeStyle = '#1E293B'; // Professional slate dark ink
+        ctx.lineWidth = 2.5;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+    }
+    
+    // Run initialization mapping
+    setTimeout(resizeCanvas, 100);
+    window.addEventListener('resize', resizeCanvas);
+
+    // Track precise draw alignment vectors
+    function getEventCoords(e) {
+        const rect = canvas.getBoundingClientRect();
+        if (e.touches && e.touches.length > 0) {
+            return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+        }
+        return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+    }
+
+    function startDraw(e) {
+        isDrawing = true;
+        const coords = getEventCoords(e);
+        ctx.beginPath();
+        ctx.moveTo(coords.x, coords.y);
+    }
+
+    function processDraw(e) {
+        if (!isDrawing) return;
+        const coords = getEventCoords(e);
+        ctx.lineTo(coords.x, coords.y);
+        ctx.stroke();
+    }
+
+    function stopDraw() { isDrawing = false; }
+
+    // Desktop Interface Support
+    canvas.addEventListener('mousedown', startDraw);
+    canvas.addEventListener('mousemove', processDraw);
+    window.addEventListener('mouseup', stopDraw);
+
+    // Mobile/Tablet Screen Interface Support
+    canvas.addEventListener('touchstart', startDraw);
+    canvas.addEventListener('touchmove', processDraw);
+    canvas.addEventListener('touchend', stopDraw);
+
+    // Clear function logic
+    clearBtn.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height));
+
+    // Submit and Lock sequence logic
+    submitBtn.addEventListener('click', async () => {
+        submitBtn.disabled = true;
+        submitBtn.style.backgroundColor = '#64748B';
+        submitBtn.innerText = "TRANSMITTING SIGNED CONTRACT...";
+
+        // Extract drawn signature vector to simple data string image line
+        const drawingData = canvas.toDataURL();
+        document.getElementById('hiddenSignatureData').value = drawingData;
+
+        // Process Formspree dynamic AJAX send structure
+        const outboxForm = document.getElementById('sparkFormspreeOutbox');
+        const payloadData = new FormData(outboxForm);
+
+        try {
+            await fetch(outboxForm.action, {
+                method: 'POST',
+                body: payloadData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            // If success, save state locally so it stays locked forever on screen
+            localStorage.setItem('Adam_FSAA_Signed_State', drawingData);
+            lockInterfaceOnScreen(drawingData);
+
+        } catch (error) {
+            alert('Network communication lag detected. Please try executing once more.');
+            submitBtn.disabled = false;
+            submitBtn.style.backgroundColor = '#A8864D';
+            submitBtn.innerText = "Execute & Secure FSAA Agreement";
+        }
+    });
+
+    // Helper interface lock engine logic
+    function lockInterfaceOnScreen(signatureImageSrc) {
+        canvas.style.pointerEvents = 'none';
+        padControls.style.display = 'none';
+        submitBtn.disabled = true;
+        submitBtn.style.backgroundColor = '#059669';
+        submitBtn.innerText = "✓ FSAA CONTRACT EXECUTED & LOCKED";
+        
+        receiptBox.style.display = 'block';
+        receiptBox.innerText = `[ SECURE LOCK VERIFIED // ID: ES-FSAA-${Math.floor(100000 + Math.random() * 900000)} ]\nTRANSMITTED TO SUB-AGENT OUTBOX CHANNELS`;
+
+        // Make sure signature is rendered inside box
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const savedSignature = new Image();
+        savedSignature.onload = () => ctx.drawImage(savedSignature, 0, 0);
+        savedSignature.src = signatureImageSrc;
+    }
+
+    // Auto-load lock status check on system boot sequence
+    window.addEventListener('DOMContentLoaded', () => {
+        const structuralPersistenceCheck = localStorage.getItem('Adam_FSAA_Signed_State');
+        if (structuralPersistenceCheck) {
+            setTimeout(() => { lockInterfaceOnScreen(structuralPersistenceCheck); }, 200);
+        }
+    });
+</script>
 </body>
+</html>
