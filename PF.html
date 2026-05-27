@@ -22,50 +22,32 @@
             --green-cta: #10B981;
             --green-bg: #ECFDF5;
         }
+        
+        * { box-sizing: border-box; }
+
         body {
-    font-family: 'Inter', sans-serif;
-    background-color: #334155;
-    margin: 0;
-    padding: 40px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+            font-family: 'Inter', sans-serif;
+            background-color: #334155;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/* DESKTOP/LAPTOP SPECIFICATIONS */
-.page {
-    width: 100%;
-    max-width: 210mm; /* Holds exact standard proportions on laptop screens */
-    min-height: 297mm;
-    background: white;
-    padding: 60px;
-    margin-bottom: 40px;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    position: relative;
-    overflow: hidden;
-}
+        /* DESKTOP/LAPTOP SPECIFICATIONS */
+        .page {
+            width: 100%;
+            max-width: 210mm; /* Holds exact standard proportions on laptop screens */
+            min-height: 297mm;
+            background: white;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
 
-/* SMARTPHONE ZOOM & EXPANSION */
-@media (max-width: 768px) {
-    body { 
-        padding: 10px 0; 
-    }
-    .page { 
-        width: 94%; /* Creates a clean 3% breathing margin on the edges instead of compressing */
-        padding: 30px 20px; /* Expands reading room for copy */
-        margin-bottom: 10px; 
-    }
-    h1 { 
-        font-size: 28px; 
-    }
-    .screenshot-container { 
-        max-width: 95%; 
-        padding: 4px; 
-    }
-    .screenshot-container img { 
-        max-height: 280px; /* Slightly adjusts height for structural presence on mobile */
-    }
-}
         header {
             position: relative;
             z-index: 1;
@@ -150,12 +132,26 @@
             border-radius: 4px;
         }
 
-        @media max-width: 768px) {
-            body { padding: 10px 0; }
-            .page { width: 100%; padding: 20px; margin-bottom: 10px; }
-            h1 { font-size: 28px; }
-            .screenshot-container { max-width: 100%; padding: 4px; }
-            .screenshot-container img { max-height: 260px; }
+        /* SMARTPHONE ZOOM & EXPANSION - FIXED PARENTHESIS SYNTAX */
+        @media (max-width: 768px) {
+            body { 
+                padding: 10px 0; 
+            }
+            .page { 
+                width: 94%; /* Creates a clean 3% breathing margin on the edges instead of compressing */
+                padding: 30px 20px; /* Expands reading room for copy */
+                margin-bottom: 10px; 
+            }
+            h1 { 
+                font-size: 28px; 
+            }
+            .screenshot-container { 
+                max-width: 100%; 
+                padding: 4px; 
+            }
+            .screenshot-container img { 
+                max-height: 280px; /* Slightly adjusts height for structural presence on mobile */
+            }
         }
 
         @media print {
@@ -186,10 +182,10 @@
                 </div>
 
                 <div class="screenshot-container">
-                    <img src="images/harvot.png" 
+                    <img src="images/harvot.png" alt="Institutional Pool 01 Evidence">
                 </div>
 
-                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 01 //</strong></div>
+                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 01 // HARVOT_INTERFACE</strong></div>
                 <div style="margin-bottom: 10px;"><strong>• Private Portfolio Pool:</strong> 4,500+ Assets Disposed &amp; Acquired</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Direct Channel Alignment:</strong> Empirical tracking validates our direct pipeline connection with high-net-worth principal operators, securing immediate access to secondary deployment routes the moment baseline acquisition parameters are anchored.</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Institutional Demand:</strong> Active network verification confirms immediate appetite from institutional buyers for regional probate originations containing significant, unmapped equity buffers.</div>
@@ -202,10 +198,10 @@
                 </div>
 
                 <div class="screenshot-container">
-                   <img src="images/will.png" 
+                    <img src="images/will.png" alt="Institutional Pool 02 Evidence">
                 </div>
 
-                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 02 //</strong></div>
+                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 02 // WILL_POOL_INTERFACE</strong></div>
                 <div style="margin-bottom: 10px;"><strong>• Acquisition Mandates:</strong> Sovereign &amp; Family Office Portfolios</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Whitelisted Infrastructure:</strong> Special-situation deployment parameters are formally verified and whitelisted across elite, off-market real estate networks to ensure frictionless compliance.</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Allocated Capital Blocks:</strong> Managing directors handling private family capital have formally requested direct Data Room access keys, ready to trigger upon the final stabilization of our off-market strike price.</div>
@@ -218,10 +214,10 @@
                 </div>
 
                 <div class="screenshot-container">
-                    <img src="images/end.jpg" 
+                    <img src="images/end.jpg" alt="Institutional Pool 03 Evidence">
                 </div>
 
-                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 03 // </strong></div>
+                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 03 // SUPPORTED_OPERATORS_LOG</strong></div>
                 <div style="margin-bottom: 10px;"><strong>• Income Security:</strong> Supported Living &amp; Social Housing Operators</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Sovereign-Backed Matching:</strong> Compliance-led underwriting for this regional corridor perfectly matches structured social housing deployment criteria for long-term sustainability.</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Verified Verification:</strong> Institutional operators targeting government-backed income frameworks have logged formal verification parameters directly across our digital footprint.</div>
@@ -234,10 +230,10 @@
                 </div>
 
                 <div class="screenshot-container">
-                    <img src="images/zol.png" 
+                    <img src="images/zol.png" alt="Institutional Pool 04 Evidence">
                 </div>
 
-                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 04 //</strong></div>
+                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 04 // BRIDGING_CONSORTIUM_LOG</strong></div>
                 <div style="margin-bottom: 10px;"><strong>• Capital Liquidity:</strong> Privately Funded Specialist Bridging Integration</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>7-Day Velocity Matrix:</strong> Our pipeline integrates direct liquidity lines via specialist bridging consortiums to guarantee absolute completion velocity on all active originations.</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Friction Elimination:</strong> This institutional alignment ensures flexible structuring logic is pre-staged, entirely removing retail banking friction and mortgage failure risks from the completion ledger.</div>
@@ -250,10 +246,10 @@
                 </div>
 
                 <div class="screenshot-container">
-                    <img src="images/ben.png" 
+                    <img src="images/ben.png" alt="Institutional Pool 05 Evidence">
                 </div>
 
-                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 05 // </strong></div>
+                <div style="margin-bottom: 12px; color: #64748B; font-family: monospace; font-size: 12px;"><strong>📁 LOG ENTRY 05 // HIGH_YIELD_CONVERSION_LOG</strong></div>
                 <div style="margin-bottom: 10px;"><strong>• Model Optimization:</strong> High-Yield Conversion Specialist Alignment</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Quantitative Validation:</strong> Strategic operators specializing in high-volume asset conversion models have formally verified our underlying matrix and underwriting configurations.</div>
                 <div style="margin-bottom: 8px; padding-left: 15px;">• <strong>Deployment Readiness:</strong> Real-time profile engagements confirm that our proprietary underwriting matches active investor appetite, leaving capital structures primed for immediate release.</div>
