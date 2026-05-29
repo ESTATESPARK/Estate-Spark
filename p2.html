@@ -9,7 +9,76 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
-     
+     /* ========================================== */
+        /* ELITE INSTITUTIONAL GOLD VAULT DATA WALL   */
+        /* ========================================== */
+        .vdr-locked-container {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: not-allowed;
+            padding: 2px 6px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        /* The Gold Vault Text Blur */
+        .vdr-locked-text {
+            color: transparent !important;
+            text-shadow: 0 0 7px #A8864D !important; /* Premium Matte Gold Blur */
+            font-weight: 700;
+            user-select: none !important;
+            -webkit-user-select: none;
+            transition: text-shadow 0.3s ease;
+        }
+
+        /* Floating Security Badge Overlay */
+        .vdr-locked-container::after {
+            content: "🔒 SECURE DATA ROOM GATED";
+            position: absolute;
+            font-family: 'Inter', sans-serif;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #FFFFFF;
+            background-color: #0F172A; /* Deep Navy Shell */
+            border: 1px solid #A8864D;  /* Gold Trim Accent */
+            padding: 3px 8px;
+            border-radius: 3px;
+            white-space: nowrap;
+            opacity: 0.85;
+            transform: scale(0.95);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 10;
+        }
+
+        /* Dynamic Hover States: Seamless Micro-Animations */
+        .vdr-locked-container:hover {
+            background-color: rgba(168, 134, 77, 0.08); /* Soft gold ambient glow backdrop */
+        }
+
+        .vdr-locked-container:hover .vdr-locked-text {
+            text-shadow: 0 0 5px #C5A059 !important; /* Gold shifts focus depth slightly */
+        }
+
+        /* The Lock Badge scale-up and click-invite transformation */
+        .vdr-locked-container:hover::after {
+            content: "🔒 ACCESS GATED — DEPOSIT EXECUTED NCND + POF TO UNLOCK";
+            opacity: 1;
+            transform: scale(1.03);
+            background-color: #BE123C; /* Institutional Alert Crimson on hover */
+            border-color: #FECDD3;
+            box-shadow: 0 10px 15px -3px rgba(190, 18, 60, 0.3);
+            animation: lockPulse 0.6s ease-in-out infinite alternate;
+        }
+
+        /* High-fidelity pulse loop for maximum click urgency */
+        @keyframes lockPulse {
+            0% { transform: scale(1.03); }
+            100% { transform: scale(1.06); }
+        }    
 
         :root {
             --navy: #0F172A;
@@ -298,7 +367,7 @@
 
         <div class="data-row">
             <span class="label">Strike Price:</span>
-            <span class="value">£125,000 (Secured via Probate Mandate)</span>
+            <span class="value">£125,000 (mmediate transfer available)</span>
         </div>
         <div class="data-row">
             <span class="label">Target GDV:</span>
@@ -323,7 +392,7 @@
                 
         <h3 style="margin-top:35px; text-transform:uppercase; letter-spacing: 1px; font-weight:800;">THE MANDATE DNA</h3>
         <h4>Velocity: <span class="highlight">Executor-approved;</span> Title Audit cleared; 7-Day Exchange Protocol Active.</h4>
-        <h4>Spec: Institutional "Route 3" Refurb (21K finish) <span class="highlight">Engineered to capture proven £200k+ Ceiling (131 Wigan Road).</span></h4>
+        <h4>Spec: Institutional "Route 3" Refurb (18K finish) <span class="highlight">Engineered to capture proven £200k+ Ceiling (131 Wigan Road).</span></h4>
             
         <h4>Liquidity: M6/Haydock Logistics Corridor; Proximity to 10m+ sq ft hubs drives high-velocity demand.</h4>
         <h4>Scarcity: <span class="highlight">Rare detached garage/rear-access amenity</span> in high-density terrace zone.</h4>
@@ -351,19 +420,19 @@
                 <tr>
                     <td class="phase-col"></td>
                     <td>Procurement Fee</td>
-                    <td class="value-col">£3,500</td>
+                    <td class="value-col">£3,000</td>
                     <td class="institutional-logic">Estate Spark sourcing &amp; due diligence fee.</td>
                 </tr>
                 <tr>
                     <td class="phase-col"></td>
                     <td>Stamp Duty (SDLT)</td>
-                    <td class="value-col">£6,000</td>
+                    <td class="value-col">£6,250</td>
                     <td class="institutional-logic">Calculated at 5% (Second Home/Inv Surcharge).</td>
                 </tr>
                 <tr>
                     <td class="phase-col"></td>
                     <td>Legal &amp; Survey</td>
-                    <td class="value-col">£3,500</td>
+                    <td class="value-col">£3,000</td>
                     <td class="institutional-logic">Professional conveyancing &amp; structural audit.</td>
                 </tr>
                 <tr>
@@ -469,11 +538,11 @@
 									
                     <td style="padding: 15px; border-bottom: 2px solid #b22222; font-weight: 900; color: #b22222;">INSTITUTIONAL HEDGE</td>
                     <td style="padding: 15px; border-bottom: 2px solid #b22222; color: #b22222; font-size: 13px; font-style: italic;"> A dedicated 7.15% financial buffer Contingency & Unforeseen Works Buffer.</td>
-                    <td style="padding: 15px; border-bottom: 2px solid #b22222; text-align: right; font-weight: 900; color: #b22222; font-family: monospace;">£1,800</td>
+                    <td style="padding: 15px; border-bottom: 2px solid #b22222; text-align: right; font-weight: 900; color: #b22222; font-family: monospace;">£1,050</td>
                 </tr>
                 <tr style="background-color: #0F172A; color: #ffffff;">
                     <td colspan="2" style="padding: 20px; font-weight: 900; font-size: 15px; text-transform: uppercase; letter-spacing: 2px;">Total Extraction Refurb Cost</td>
-                    <td style="padding: 20px; text-align: right; font-weight: 900; font-size: 18px; color: #ffffff; font-family: monospace;">£18,000</td>
+                    <td style="padding: 20px; text-align: right; font-weight: 900; font-size: 18px; color: #ffffff; font-family: monospace;">£18,250</td>
                 </tr>
             </tbody>
         </table>
@@ -496,21 +565,21 @@
                     <td>0.4 miles </td>
                     <td><strong>SOLD (2025)</strong></td>
                     <td style="font-family: monospace; font-weight: 700;">£195,000</td>
-                    <td><span class="vdr-locked-text">Direct street comparable; establishes the baseline for standard finishes.</span></td>
+                    <td>Direct street comparable; establishes the baseline for standard finishes.</td>
                 </tr>
                 <tr>
                     <td>23 Wentworth Rd</td>
                     <td>0.4 miles</td>
                     <td><strong>SOLD (2025)</strong></td>
                     <td style="font-family: monospace; font-weight: 700;">£210,000</td>
-                    <td><span class="vdr-locked-text">Proves the +£200k barrier is active; validates premium for "Best-in-Class" finish.</span></td>
+                    <td>Proves the +£200k barrier is active; validates premium for "Best-in-Class" finish.</span></td>
                 </tr>
                 <tr>
-                    <td>131 Wigan Road</td>
+                    <td><span class="vdr-locked-text">131 Wigan Road</span></td>
                     <td>0.0 miles</td>
                     <td><strong>EXCHANGED (2025)</strong></td>
                     <td style="font-family: monospace; font-weight: 700;">£200,000</td>
-                    <td><span class="vdr-locked-text">Direct street comp; confirms institutional demand on this specific road.</span></td>
+                    <td>Direct street comp; confirms institutional demand on this specific road.</td>
                 </tr>
 							<tr style="background-color: #98FB98; border-left: 4px solid #0F172A; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);">
             <td style="padding: 15px; font-weight: 900; color: #0F172A;">Wigan Rd (Subject Asset)</td>
@@ -522,7 +591,7 @@
             </tbody>
         </table>
 
-        <div class="gallery-header"><span class="vdr-locked-text">🏛️ Data Verification: Street-Level Comps</span></div>
+      <div class="gallery-header"><span class="vdr-locked-text">🏛️ Data Verification: Street-Level Comps</span></div>
 
         <div class="gallery-container">
             <div class="proof-card">
@@ -561,7 +630,7 @@
                     <tr>
                         <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-weight: 800; font-size: 13px; color: #0F172A;">Market Value</td>
                         <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-weight: 700; font-family: monospace;">£165,000</td>
-                        <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-weight: 900; color: #b22222; font-family: monospace;">£192,000</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-weight: 900; color: #b22222; font-family: monospace;">£195,000</td>
                     </tr>
                     <tr style="background: #fcfcfc;">
                         <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-size: 12px; color: #475569;">Net Square Footage</td>
@@ -585,7 +654,7 @@
                     <tr style="background: #fcfcfc;">
                         <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-size: 12px; color: #475569;">Specification</td>
                         <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-size: 12px;">Basic Rental Standard</td>
-                        <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-size: 12px; font-weight: 700; color: #0F172A;">Institutional 25k Finish | EPC C (Projected).</td>
+                        <td style="padding: 12px; border-bottom: 1px solid #E2E8F0; font-size: 12px; font-weight: 700; color: #0F172A;">Institutional 18k Finish | EPC D <strong>(Projected C)</strong>.</td>
                     </tr>
                 </tbody>
             </table>
@@ -601,7 +670,7 @@
                        The <strong>£39,000 premium</strong> is mathematically secured by <strong>Volumetric Alpha</strong> (a 75.7% increase over the street-level 850 sq. ft. baseline) and <strong>Logistical Scarcity</strong> (Detached Garage & Private Parking). 
       <br>
 <br>
-By bridging the gap between a £160k commodity floor and a £200k+ proven market ceiling, this asset represents a <strong>"Best-in-Class" exit scenario</strong>. We have engineered a high-velocity, de-risked financial product that stands as the premier institutional hold in the WN4 strategic corridor.
+By bridging the gap between a £160k commodity floor and a £195k+ proven market ceiling, this asset represents a <strong>"Best-in-Class" exit scenario</strong>. We have engineered a high-velocity, de-risked financial product that stands as the premier institutional hold in the WN4 strategic corridor.
                 </p>
     </div>
 </section>
@@ -639,7 +708,7 @@ By bridging the gap between a £160k commodity floor and a £200k+ proven market
                     <span style="font-size: 10px; font-weight: 900; color: #64748B; text-transform: uppercase; letter-spacing: 1px;">Exit Path C</span>
                     <div style="font-size: 18px; font-weight: 900; margin: 10px 0; color: #0F172A;">THE YIELD</div>
                     <div style="background: #E2E8F0; padding: 8px; margin-bottom: 15px; border-radius: 2px;">
-                        <span style="font-size: 16px; font-weight: 900; color: #0F172A; font-family: monospace;">7.68% GROSS</span>
+                        <span style="font-size: 16px; font-weight: 900; color: #0F172A; font-family: monospace;">8.32% GROSS</span>
                     </div>
                     <p style="font-size: 12.5px; color: #475569; line-height: 1.5; margin: 0;"><strong>Objective:</strong> Exit via Income.<br>Secured by <strong>£593 PCM LHA Shield And 866.6 PCM After £18K SoW </strong> (Projected yielding 8.32% on purchase price).</p>
                 </div>
@@ -708,25 +777,30 @@ This optionality allows us to govern the asset based on prevailing market condit
         </tbody>
     </table>
 
-    <div style="background: #1a1a1a; padding: 25px; border-left: 5px solid #10B981;">
-        <h4 style="font-size: 13px; font-weight: 900; color: #ffffff; text-transform: uppercase; margin: 0 0 10px 0; letter-spacing: 0.5px;">
-            🔒 System Clearance Archive
-        </h4>
-        <div style="display: flex; gap: 25px; flex-wrap: wrap; margin-bottom: 15px;">
-            <span style="font-size: 11px; font-weight: 900; color: #10B981; font-family: monospace; letter-spacing: 0.5px;">
-                ✓ DEED OF NCND: LEGALLY EXECUTED
-            </span>
-            <span style="font-size: 11px; font-weight: 900; color: #10B981; font-family: monospace; letter-spacing: 0.5px;">
-                ✓ PROOF OF FUNDS: LIQUIDITY VERIFIED
-            </span>
-        </div>
-        <p style="font-size: 13px; line-height: 1.5; color: #ccc; margin: 0;">
-            All system conditions have targeted absolute execution parameters. Data room gateway is configured to <strong>UNRESTRICTED ACCESS</strong> for authorized pipeline participants.
+		<div style="background: #ffffff; border: 1px solid #e0e0e0; padding: 30px; text-align: center; max-width: 600px; margin: 20px auto; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+    <div style="font-size: 40px; margin-bottom: 15px; color: #b22222;">🔒</div>
+    
+    <h3 style="font-size: 16px; font-weight: 800; text-transform: uppercase; color: #1a1a1a; margin-bottom: 10px; letter-spacing: 1px;">
+        Access Restricted: Institutional Verification Required
+    </h3>
+    
+    <p style="font-size: 13px; color: #666; margin-bottom: 25px; line-height: 1.6;">
+        The forensic data room is currently under restricted silo access. To unlock the asset portfolio and full underwriting models, please complete the two-factor authentication protocol:
+    </p>
+
+    <ul style="list-style: none; padding: 0; margin-bottom: 25px; font-size: 12px; color: #333; text-align: left; display: inline-block;">
+        <li style="margin-bottom: 8px;">✅ <strong>Proof of Funds (PoF):</strong> Verified liquidity submission.</li>
+        <li style="margin-bottom: 8px;">✅ <strong>Reservation Fee:</strong> £250 commitment token via iFAST UK Bank.</li>
+    </ul>
+
+    <div style="border-top: 1px solid #eee; padding-top: 20px;">
+        <p style="font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 1px;">
+            Access logs are monitored. Unauthorized access is prohibited.
         </p>
     </div>
-
 </div>
-	
+		
+    </div>	
 <div style="font-family: 'Inter', sans-serif; max-width: 210mm; margin: 30px auto; padding: 25px; background: #fff; border: 1px solid #1a1a1a;">
 
     <div style="border-bottom: 2px solid #000; padding-bottom: 10px; margin-bottom: 30px; background: #1a1a1a; padding: 15px;">
@@ -751,18 +825,18 @@ This optionality allows us to govern the asset based on prevailing market condit
                 <td style="padding: 15px; border-bottom: 1px solid #eee; font-weight: 800; font-size: 13px;">Full Asset Address</td>
                 <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 13px;"><span class="vdr-locked-text">Wigan Road, Ashton-In-Makerfield, WN4</span></td>
 							
-                <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 12px; color: #555;"><span class="vdr-locked-text">End-Terrace Asset with rare rear-vehicular access.</span></td>
+                <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 12px; color: #555;">End-Terrace Asset with rare rear-vehicular access.</span></td>
             </tr>
             <tr style="background: #fcfcfc;">
                 <td style="padding: 15px; border-bottom: 1px solid #eee; font-weight: 800; font-size: 13px;">Authority / Ward</td>
-                <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 13px;"><span class="vdr-locked-text">Wigan Metropolitan Borough | Ashton Ward</span></td>
+                <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 13px;"><span class="vdr-locked-text">Wigan Metropolitan Borough | Ashton Ward.</td>
          
-							<td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 12px; color: #555;"><span class="vdr-locked-text">Stable Tier-1 Governance; High Planning Predictability.</span></td>
+							<td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 12px; color: #555;">Stable Tier-1 Governance; High Planning Predictability.</td>
             </tr>
             <tr>
                 <td style="padding: 15px; border-bottom: 1px solid #eee; font-weight: 800; font-size: 13px;">Tenure Scrutiny</td>
                 <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 13px;"><span class="vdr-locked-text">FREEHOLD</span></td>
-                <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 12px; color: #555;"><span class="vdr-locked-text">Absolute ownership, no legal delays.</span></td>
+                <td style="padding: 15px; border-bottom: 1px solid #eee; font-size: 12px; color: #555;">Absolute ownership, no legal delays.</td>
             </tr>
         </tbody>
     </table>
@@ -896,21 +970,42 @@ This optionality allows us to govern the asset based on prevailing market condit
         </p>
     </div>
 </div>
-    </sectio
-    <section style="padding: 40px; text-align: center;">
-        <h3 style="font-size: 20px; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; color: #1a1a1a;">⚡ INITIATE DATA ROOM UNLOCK</h3>
-        <p style="font-size: 13px; color: #666; margin-bottom: 30px;">Complete the dual-protocol verification below to grant unrestricted asset access.</p>
-        
-        <div style="display: flex; gap: 15px; justify-content: center; max-width: 600px; margin: 0 auto 30px auto;">
-            <a href="https://estatespark.co.uk/NCND" style="flex: 1; background: #b22222; color: #fff; text-decoration: none; padding: 15px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; border: 2px solid #b22222; box-shadow: 0 4px 15px rgba(178, 34, 34, 0.2);">01. Sign NCND Agreement</a>
-            <a href="https://wa.me/447853156662?text=SECURE%20LOCKOUT%20BYPASS%3A%20I%20am%20submitting%20the%20required%20Proof%20of%20Funds%20for%20the%20WN4-ALPHA%20corridor.%20Please%20verify%20and%20grant%20Data%20Room%20clearance." style="flex: 1; border: 2px solid #1a1a1a; color: #1a1a1a; text-decoration: none; padding: 15px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; background: #fff; transition: all 0.2s ease;">
-                02. Submit Proof of Funds
-            </a>
-        </div>
-        <p style="font-size: 10px; color: #999; text-transform: uppercase; letter-spacing: 1px;">Secure Transactional Flow via iFAST Global / Certified VDR Portal</p>
-    </section>
-</div>
+     <section style="padding: 40px; font-family: sans-serif; text-align: center; background: #f9f9f9; border-radius: 8px;">
+    <h3 style="font-size: 22px; font-weight: 900; text-transform: uppercase; margin-bottom: 10px; color: #1a1a1a;">⚡ ASSET CLEARANCE PROTOCOL</h3>
+    
+    <div style="max-width: 700px; margin: 0 auto 30px auto; background: #fff; padding: 20px; border: 2px dashed #b22222;">
+        <h4 style="margin-top: 0; color: #b22222; font-size: 14px;">🔒 OFFICIAL AGENT ACCEPTANCE LETTER</h4>
+        <p style="font-size: 12px; color: #666;">This document confirms the deal status and pricing. Locked until NCND is executed.</p>
+        <button disabled style="background: #e0e0e0; color: #888; border: none; padding: 10px 20px; font-size: 12px; font-weight: 800; text-transform: uppercase; cursor: not-allowed;">
+            Locked: Sign NCND to View
+        </button>
+    </div>
 
+    <p style="font-size: 14px; color: #666; margin-bottom: 30px;">Complete these steps to unlock the full forensic Data Room:</p>
+
+    <div style="max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+        
+        <div style="background: #fff; padding: 20px; border-left: 5px solid #b22222; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: left;">
+            <strong style="color: #b22222;">STEP 01: NON-CIRCUMVENTION</strong>
+            <p style="font-size: 12px; margin: 5px 0;">Sign the NCND to instantly unlock the Official Acceptance Letter above.</p>
+            <a href="https://estatespark.co.uk/NCND" style="display: inline-block; margin-top: 10px; background: #b22222; color: #fff; text-decoration: none; padding: 8px 15px; font-size: 11px; font-weight: 800; text-transform: uppercase;">Sign NCND Agreement</a>
+        </div>
+
+        <div style="display: flex; gap: 15px;">
+            <div style="flex: 1; background: #fff; padding: 20px; border-left: 5px solid #1a1a1a; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: left;">
+                <strong style="color: #1a1a1a;">STEP 02: POF SUBMISSION</strong>
+                <p style="font-size: 12px; margin: 5px 0;">Verify liquidity via our secure WhatsApp portal.</p>
+                <a href="https://wa.me/447853156662?text=POF%20SUBMISSION" style="display: inline-block; margin-top: 10px; border: 1px solid #1a1a1a; color: #1a1a1a; text-decoration: none; padding: 8px 15px; font-size: 11px; font-weight: 800; text-transform: uppercase;">Submit POF</a>
+            </div>
+
+            <div style="flex: 1; background: #fff; padding: 20px; border-left: 5px solid #1a1a1a; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: left;">
+                <strong style="color: #1a1a1a;">STEP 03: RESERVATION FEE</strong>
+                <p style="font-size: 12px; margin: 5px 0;">Secure your position (£250) via iFAST UK Bank.</p>
+                <a href="mailto:your-email@example.com?subject=Reservation%20Fee%20Instructions" style="display: inline-block; margin-top: 10px; background: #1a1a1a; color: #fff; text-decoration: none; padding: 8px 15px; font-size: 11px; font-weight: 800; text-transform: uppercase;">	Make Payment</a>
+            </div>
+        </div>
+    </div>
+</section>
 <div style="font-family: 'Inter', sans-serif; max-width: 210mm; margin: 50px auto; padding: 40px; background: #fff; border: 1px solid #eee; border-top: 5px solid #1a1a1a; box-shadow: 0 20px 50px rgba(0,0,0,0.08);">
     
     <div style="display: flex; align-items: flex-start; gap: 35px; margin-bottom: 40px;">
