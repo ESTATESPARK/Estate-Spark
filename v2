@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1200, initial-scale=0.3">
+    <title>Invoice: REF-WN4-2026-002</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap');
+        
+        :root {
+            --navy: #0F172A;
+            --gold: #A8864D;
+            --danger: #BE123C;
+            --slate-200: #E2E8F0;
+            --slate-600: #475569;
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #334155; padding: 40px 0; display: flex; flex-direction: column; align-items: center; }
+        .page { width: 210mm; min-height: 297mm; background: white; padding: 60px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); position: relative; }
+        
+        header { border-bottom: 4px solid var(--navy); padding-bottom: 30px; margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-start; }
+        .brand h1 { font-size: 32px; color: var(--navy); margin: 0; text-transform: uppercase; letter-spacing: -1px; }
+        .brand p { color: var(--gold); font-weight: 700; font-size: 14px; letter-spacing: 1px; margin: 5px 0 0 0; }
+        
+        .status-badge { background-color: var(--danger); color: white; font-weight: 800; padding: 8px 20px; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); text-transform: uppercase; letter-spacing: 1px; }
+
+        .invoice-details { text-align: right; font-size: 14px; color: var(--slate-600); }
+        
+        .service-block { margin: 40px 0; }
+        .service-title { font-size: 24px; font-weight: 800; color: var(--navy); margin-bottom: 10px; line-height: 1.2; }
+        .service-sub { font-size: 15px; color: var(--slate-600); font-style: italic; border-left: 3px solid var(--gold); padding-left: 15px; }
+        
+        .invoice-table { width: 100%; border-top: 2px solid var(--navy); margin-top: 30px; }
+        .invoice-table td { padding: 25px 0; font-size: 16px; font-weight: 700; }
+        
+        .bank-details { margin-top: 40px; padding: 25px; background: #f8fafc; border: 1px solid var(--slate-200); }
+        .bank-details h3 { font-size: 12px; text-transform: uppercase; margin-top: 0; color: var(--slate-600); }
+        .bank-details p { font-size: 14px; color: var(--navy); margin: 8px 0; font-weight: 600; }
+        
+        footer { margin-top: 60px; font-size: 12px; color: var(--slate-600); text-align: center; border-top: 1px solid var(--slate-200); padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="page">
+    <header>
+        <div class="brand">
+            <h1>ESTATE SPARK</h1>
+            <p>CONSULTANCY INVOICE</p>
+            <div class="status-badge" style="margin-top:15px; display:inline-block;">Unpaid</div>
+        </div>
+        <div class="invoice-details">
+            <strong>ID:</strong> REF-WN4-2026-002<br>
+            <strong>DATE:</strong> [Insert Date of Exchange]
+        </div>
+    </header>
+
+    <section class="service-block">
+        <div class="service-title">ACQUISITION SUCCESS FEE: STRATEGIC CONSULTANCY & STAKEHOLDER LIAISON</div>
+        <div class="service-sub">Professional consultancy services rendered for final assessment, negotiation strategy, and stakeholder coordination for the successful acquisition of the asset located at [Wigan Road] per the Consultancy Agreement dated [Insert Date].</div>
+        
+        <table class="invoice-table">
+            <tr>
+                <td>Phase II: Acquisition Success Fee</td>
+                <td style="text-align: right;">£1,500.00</td>
+            </tr>
+        </table>
+    </section>
+
+    <div class="bank-details">
+        <h3>Payment Instructions (iFAST Global Bank Limited)</h3>
+        <p><strong>Bank Address:</strong> 77 Marsh Wall, London E14 9SH, United Kingdom</p>
+        <p><strong>Beneficiary:</strong> Razia Bibi | <strong>Sort:</strong> 04-00-01 | <strong>Account:</strong> 00449776</p>
+    </div>
+
+    <footer>
+        <p>"Payment confirms acceptance of the services rendered under the Consultancy Agreement dated [Insert Date]. All payments represent direct commercial debt for services rendered."<br>
+        estatespark.co.uk | Professional Excellence in Real Estate Growth</p>
+    </footer>
+</div>
+
+</body>
+</html>
