@@ -6,9 +6,6 @@
     <title>NCND & Fee Protection Agreement: WN4-ALPHA</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-        /* ========================================== */
-        /* INSTITUTIONAL STYLING BLOCKS               */
-        /* ========================================== */
         :root {
             --navy: #0F172A;
             --gold: #A8864D;
@@ -19,139 +16,22 @@
             --slate-900: #0F172A;
         }
         * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #334155;
-            margin: 0;
-            padding: 40px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        /* A4 Page Setup */
-        .page {
-            width: 210mm;
-            min-height: 297mm;
-            background: white;
-            padding: 60px;
-            margin-bottom: 40px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        /* Decorative Watermark */
-        .page::before {
-            content: "LEGAL DEED";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-45deg);
-            font-size: 110px;
-            font-weight: 900;
-            color: rgba(0,0,0,0.015);
-            z-index: 0;
-            pointer-events: none;
-        }
-        header {
-            position: relative;
-            z-index: 1;
-            border-bottom: 4px solid var(--navy);
-            padding-bottom: 30px;
-            margin-bottom: 40px;
-        }
-        .status-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .status-pill {
-            background: var(--danger);
-            color: white;
-            padding: 6px 16px;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-        }
-        .ref-code {
-            font-size: 14px;
-            color: var(--slate-600);
-            font-weight: 700;
-        }
-        h1 {
-            font-size: 34px;
-            font-weight: 800;
-            color: var(--navy);
-            margin: 0;
-            line-height: 1.1;
-            letter-spacing: -1px;
-        }
-        .sub-h1 {
-            color: var(--gold);
-            font-size: 16px;
-            font-weight: 700;
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #334155; margin: 0; padding: 40px 0; display: flex; flex-direction: column; align-items: center; }
+        .page { width: 210mm; min-height: 297mm; background: white; padding: 60px; margin-bottom: 40px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); position: relative; overflow: hidden; }
+        .page::before { content: "LEGAL DEED"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 110px; font-weight: 900; color: rgba(0,0,0,0.015); z-index: 0; pointer-events: none; }
+        header { position: relative; z-index: 1; border-bottom: 4px solid var(--navy); padding-bottom: 30px; margin-bottom: 40px; }
+        .status-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .status-pill { background: var(--danger); color: white; padding: 6px 16px; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
+        .ref-code { font-size: 14px; color: var(--slate-600); font-weight: 700; }
+        h1 { font-size: 34px; font-weight: 800; color: var(--navy); margin: 0; line-height: 1.1; letter-spacing: -1px; }
+        .sub-h1 { color: var(--gold); font-size: 16px; font-weight: 700; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px; }
         section { margin-bottom: 35px; position: relative; z-index: 1; }
-        h2 {
-            font-size: 16px;
-            background: var(--navy);
-            color: white;
-            padding: 10px 20px;
-            display: inline-block;
-            margin-top: 0;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
-        }
-        .parameter-box {
-            background-color: var(--slate-50);
-            border-left: 4px solid var(--gold);
-            padding: 20px;
-            margin: 15px 0;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .parameter-grid {
-            display: grid;
-            grid-template-columns: 140px 1fr;
-            gap: 8px;
-        }
-        .highlight-alert {
-            background-color: #FFF1F2;
-            border: 1px solid #FECDD3;
-            padding: 22px;
-            border-radius: 4px;
-            margin-top: 15px;
-        }
-        .payout-pill {
-            color: var(--danger);
-            font-weight: 800;
-            background-color: #FDF2F2;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-family: monospace;
-            font-size: 15px;
-        }
-        footer {
-            margin-top: 50px;
-            border-top: 1px solid var(--slate-200);
-            padding-top: 20px;
-            text-align: center;
-            font-size: 11px;
-            color: #94A3B8;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        @media print {
-            body { background: none; padding: 0; }
-            .page { box-shadow: none; margin: 0; }
-        }
+        h2 { font-size: 16px; background: var(--navy); color: white; padding: 10px 20px; display: inline-block; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%); }
+        .parameter-box { background-color: var(--slate-50); border-left: 4px solid var(--gold); padding: 20px; margin: 15px 0; font-size: 14px; line-height: 1.6; }
+        .parameter-grid { display: grid; grid-template-columns: 180px 1fr; gap: 8px; }
+        .highlight-alert { background-color: #FFF1F2; border: 1px solid #FECDD3; padding: 22px; border-radius: 4px; margin-top: 15px; }
+        .payout-pill { color: var(--danger); font-weight: 800; background-color: #FDF2F2; padding: 3px 8px; border-radius: 3px; font-family: monospace; font-size: 15px; }
+        footer { margin-top: 50px; border-top: 1px solid var(--slate-200); padding-top: 20px; text-align: center; font-size: 11px; color: #94A3B8; font-weight: 600; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -169,10 +49,10 @@
         <h2>🏛️ 01. Schedule of Engagement Parameters</h2>
         <div class="parameter-box">
             <div class="parameter-grid">
-                <strong>DATE OF DEED:</strong> <span>[8 June 2026]</span>
-                <strong>CONSULTANT:</strong> <span>Estate Spark (Awais Razia)</span>
-                <strong>Buyer DESK:</strong> <span style="font-style: italic; color: var(--slate-600);">Nathan Kohn (Acting as Co-sourcing)</span>
-                <strong>TARGET ASSET REF:</strong> <span>WN4-ALPHA (Wigan/Northwest Residential Corridor)</span>
+                <strong>DATE OF DEED:</strong> <span>11 June 2026</span>
+                <strong>CONSULTANT:</strong> <span>Estate Spark (Awais Razia with lead)</span>
+                <strong>ACQUISITION PARTNER:</strong> <span>Chloe (HLE) With Buyer</span>
+                <strong>TARGET ASSET REF:</strong> <span>WN4-ALPHA (Wigan/Northwest)</span>
             </div>
         </div>
     </section>
@@ -180,19 +60,19 @@
     <section>
         <h2>🏛️ 02. Purpose & Proprietary Gated Mandate</h2>
         <p style="font-size: 14px; color: var(--slate-900); line-height: 1.6; margin: 0;">
-            The Consultant operates a specialized asset-sourcing pipeline and has verified the legal title, structural viability, and investment potential under tracking code WN4-ALPHA. This agreement legally binds the Buyer to absolute confidentiality and total non-circumvention protocols in exchange for immediate administrative release of the Virtual Data Room (VDR) archive access keys.
+            The Consultant operates a specialized asset-sourcing pipeline and has verified the legal title, structural viability, and investment potential under tracking code <strong>WN4-ALPHA.</strong> This agreement legally binds the Acquisition Partner to absolute confidentiality and total non-circumvention protocols in exchange for the immediate administrative release of the Virtual Data Room (VDR) archive access keys and full property disclosure
         </p>
     </section>
 
     <section>
         <h2>🏛️ 03. Absolute Anti-Bypass Security Shields</h2>
         <p style="font-size: 14px; color: var(--slate-900); line-height: 1.6; margin-bottom: 15px;">
-            To secure absolute operational integrity, the Buyer permanently binds their corporate desk, joint-venture partners, and subsequent nominees to the following statutory restrictions under English law:
+            To secure absolute operational integrity, the Acquisition Partner permanently binds their corporate desk, joint-venture partners, and subsequent nominees to the following statutory restrictions under English law:
         </p>
         <ul style="list-style: none; padding-left: 0; margin: 0;">
             <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 13.5px; color: var(--slate-900); line-height: 1.5;">
                 <span style="position: absolute; left: 0; top: 1px; font-size: 12px;">🛡️</span>
-                <strong>Strict Non-Circumvention:</strong> The Buyer shall not, under any circumstances, communicate, negotiate, or execute contracts directly or indirectly with the asset vendors, executors, or listing branch agents of the Target Asset without the express written authorization of the Consultant.
+                <strong>Strict Non-Circumvention:</strong> The Acquisition Partner shall not, under any circumstances, communicate, negotiate, or execute contracts directly or indirectly with the asset vendors, executors, or listing branch agents of the Target Asset without the express written authorization of the Consultant.
             </li>
             <li style="position: relative; padding-left: 25px; margin-bottom: 12px; font-size: 13.5px; color: var(--slate-900); line-height: 1.5;">
                 <span style="position: absolute; left: 0; top: 1px; font-size: 12px;">🛡️</span>
@@ -205,25 +85,29 @@
         <h2>🏛️ 04. Fixed Procurement Fee Split & Exchange Mandate</h2>
         <div class="highlight-alert">
             <span style="font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: var(--danger); display: block; margin-bottom: 12px;">Mandatory Financial Enforcement Protocols</span>
-            
             <div style="font-size: 14.5px; margin-bottom: 12px; color: #1A1A1A; line-height: 1.5;">
-                <strong>• Fixed Procurement Compensation:</strong> <span class="payout-pill">£1,000 Flat</span> due cleanly from the Buyer for the extraction, underwriting, and strategic packaging of the Target Asset allocation file.
+                <strong>• Total Procurement Fee:</strong> The total fee for the extraction, underwriting, and strategic packaging of the Target Asset allocation file is fixed at  <span class="payout-pill">Total £4,000 (Four Thousand GBP)</span>
             </div>
-            
             <div style="font-size: 14.5px; margin-bottom: 12px; color: #1A1A1A; line-height: 1.5;">
-                <strong>• The Un-Bypassable Trigger Mechanism:</strong> This sum becomes fully vested, earned, and non-refundable immediately upon the legal Exchange of the property purchase.
+                <strong>• The Agreed Fee Split:</strong>
+							<br>Consultant (Estate Spark) 45% (£1,800) <br> Acquisition Partner (HLE) 55% (£2,200).
             </div>
-
+            <div style="font-size: 14.5px; margin-bottom: 12px; color: #1A1A1A; line-height: 1.5;">
+                <strong>• The Un-Bypassable Trigger Mechanism:</strong> These sums become fully vested, earned, and non-refundable immediately upon the legal Exchange of Contracts. 
+							<br>
+							<br>
+							<div style="font-size: 14.5px; margin-bottom: 12px; color: #1A1A1A; line-height: 1.5;">
+                <strong>•Payment Mandate:</strong> Payment shall be made by the Acquisition Partner to the Consultant’s nominated iFast UK Bank Account via BACS/Faster Payment within 24 hours of the successful legal exchange.
+            </div>
         </div>
     </section>
 
     <section>
         <h2>🏛️ 05. Governing Law & Legal Specific Performance</h2>
-        <p style="font-size: 14px; color: var(--slate-600); line-height: 1.6; margin-bottom: 35px;">
+        <p style="font-size: 14px; color: var(--slate-600); line-height: 1.6; margin-bottom: 15px;">
             This Deed is governed entirely under the laws of England and Wales. Any bypass attempt automatically empowers the Consultant to seek immediate High Court injunctions to halt the transaction, register a restriction against the property title, and recover the full debt plus accrued legal enforcement outlays.
         </p>
-        <br>
-<pr>
+        
         <strong>Conditionality:</strong> This agreement is strictly tied to the successful outcome of the transaction. If for any reason the deal does not proceed to exchange, <strong>this agreement becomes null and void with no obligations for either party.</strong>
 </p>
        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; border-top: 1px dashed var(--slate-200); padding-top: 30px;">
