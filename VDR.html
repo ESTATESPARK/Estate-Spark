@@ -238,39 +238,35 @@
 }
 .proof-card {
     border: 1px solid var(--slate-200);
-    padding: 12px;
+    padding: 10px; /* Reduced padding */
     background: #fff;
     box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
     text-align: center;
-    /* Guaranteed height for the container */
-    height: 240px; 
+    /* Remove 'height: 240px;' and use 'min-height' or 'auto' */
+    height: auto; 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .proof-card img {
-    /* Guaranteed fit: No cropping, no trimming */
     max-width: 100%;
-    max-height: 160px;
+    /* Lower this value to shrink the image area */
+    max-height: 120px; 
     width: auto;
-    height: auto;
-    margin: 0 auto;
+    margin: 0 auto 10px auto; /* Adds space between image and text */
     object-fit: contain;
-    border: 1px solid #E2E8F0;
     display: block;
 }
 
 .proof-caption {
     font-size: 10px;
     color: #64748B;
-    margin-top: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-top: auto; /* Keeps text at the bottom if needed */
 }
-
-        footer {
+		footer {
             margin-top: 60px;
             border-top: 1px solid var(--slate-200);
             padding-top: 20px;
