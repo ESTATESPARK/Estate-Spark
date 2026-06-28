@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=950, initial-scale=0.3, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes">
-	<title>Consultancy Agreement: WN-2026-CONSULT</title>
+    <meta name="viewport" content="width=1200, initial-scale=0.3, minimum-scale=0.1, maximum-scale=5.0, user-scalable=yes">
+    <title>Investment Memorandum</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');			
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+
         :root {
             --navy: #0F172A;
             --gold: #A8864D;
@@ -15,233 +16,268 @@
             --slate-600: #475569;
             --slate-900: #0F172A;
         }
-        * { box-sizing: border-box; }
-        body { font-family: 'Inter', sans-serif; background-color: #334155; margin: 0; padding: 40px 0; display: flex; flex-direction: column; align-items: center; }
-        .page { width: 210mm; min-height: 297mm; background: white; padding: 60px; margin-bottom: 40px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); position: relative; }
-        header { border-bottom: 4px solid var(--navy); padding-bottom: 30px; margin-bottom: 50px; }
-        .status-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .status-pill { background: var(--navy); color: white; padding: 6px 16px; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; }
-        h1 { font-size: 42px; font-weight: 800; color: var(--navy); margin: 0; }
-        .sub-h1 { color: var(--gold); font-size: 18px; font-weight: 700; margin-top: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        h2 { font-size: 20px; background: var(--navy); color: white; padding: 10px 20px; display: inline-block; margin-bottom: 25px; clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%); }
-        .clause-box { font-size: 14px; background: #FAFAFA; padding: 20px; border: 1px solid #E2E8F0; line-height: 1.6; margin-bottom: 20px; }
-        .btn-execute { width: 100%; max-width: 400px; background-color: #A8864D; color: #FFFFFF; border: none; padding: 14px 24px; font-size: 14px; font-weight: 700; text-transform: uppercase; border-radius: 4px; cursor: pointer; }
+
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #334155;
+            margin: 0;
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* A4 Page Setup */
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            background: white;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative Watermark */
+        .page::before {
+            content: "CONFIDENTIAL";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(0,0,0,0.015);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        header {
+            position: relative;
+            z-index: 1;
+            border-bottom: 4px solid var(--navy);
+            padding-bottom: 30px;
+            margin-bottom: 50px;
+        }
+
+        .status-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .status-pill {
+            background: var(--navy);
+            color: white;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .ref-code {
+            font-size: 14px;
+            color: var(--slate-600);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--navy);
+            margin: 0;
+            line-height: 1;
+            letter-spacing: -1.5px;
+        }
+
+        .sub-h1 {
+            color: var(--gold);
+            font-size: 18px;
+            font-weight: 700;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        section { margin-bottom: 40px; position: relative; z-index: 1; }
+
+        h2 {
+            font-size: 20px;
+            background: var(--navy);
+            color: white;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-top: 0;
+            margin-bottom: 25px;
+            clip-path: polygon(0% 0%, 95% 0%, 100% 50%, 95% 100%, 0% 100%);
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1E293B;
+            letter-spacing: 0.5px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+            
+        h4 {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1a1a1a;
+            border-left: 4px solid #000;
+            padding-left: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+ 
+			.pro-list {
+        list-style-type: none; /* Removes default dots */
+        padding-left: 0;
+    }
+
+    .pro-list li {
+        margin-bottom: 12px; /* Adds breathing room */
+        padding-left: 25px;  /* Space for the bullet */
+        position: relative;
+        line-height: 1.6;    /* Makes it easy to read */
+    }
+
+    /* Creates a subtle, professional square bullet */
+    .pro-list li::before {
+        content: "■";
+        position: absolute;
+        left: 0;
+        color: #64748B; /* Professional grey color */
+        font-size: 10px;
+        top: 6px;
+    }
+			
+		footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--slate-200);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--slate-600);
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .page { box-shadow: none; margin: 0; }
+        }
     </style>
 </head>
 <body>
+
 <div class="page">
+    
     <header>
         <div class="status-header">
-            <span class="status-pill">Legally Privileged / Confidential</span>
-            <span class="ref-code">REF: WN-2026-CONSULT</span>
+            <span class="status-pill">Confidential / Off-Market</span>
+            <span class="ref-code">REF: PCL-2026-ALPHA</span>
         </div>
-        <h1>Acquisition Consultancy Agreement</h1>
-        <div class="sub-h1">Technical Underwriting & Data Services</div>
+        <h1>INVESTMENT MEMORANDUM</h1>
+        <div class="sub-h1">Prime Central London PBSA Portfolio</div>
     </header>
-
-    <section>
-        <h2>🏛️ 01. ENGAGEMENT PARAMETERS</h2>
-        <div class="clause-box">
-            <strong>Consultant:</strong> [Razia BiBi]<br>
-            <strong>Client:</strong> Adam [Investor Last Name]<br>
-            <strong>Asset:</strong> [Wigan Road]<br>
-            <strong>Date:</strong> 04 June 2026
-        </div>
-    </section>
-    <section>
-        <h2>1. Scope of Services</h2>
-        <p>The Consultant agrees to provide the following professional services to the Client in relation to the property asset located at <strong>[Full Property Address]</strong> (the "Asset"):</p>
-			<br>
-        <ul>
-            <li><strong>Market Identification & Technical Underwriting:</strong> Comprehensive analysis of the Asset, including financial modeling, ROI projections, and risk-assessment reporting.</li>
-					
-					<br>
-            <li><strong>Due Diligence & VDR Compilation:</strong> Preparation and verification of a Virtual Data Room (VDR) comprising title documentation, planning compliance, EPC certification, and structural integrity reports.</li>
-					
-					<br>
-            <li><strong>Stakeholder Liaison:</strong> Provision of strategic guidance in negotiations with the listing agent and primary stakeholders to align transaction terms with the Client’s investment mandate.</li>
-          <br>  
-					<li><strong>Acquisition Documentation:</strong> Assistance in the drafting and review of offer acceptance documentation.</li>
-        </ul>
-    </section>
-
-   <section>
-        <h2>2. Fee Structure and Payment Terms</h2>
-        <p>In consideration for the professional services rendered, the Client agrees to the following fee structure, payable directly to the Consultant’s nominated UK banking facility:</p>
-        
-        <table style="width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 14px;">
-            <thead>
-                <tr style="border-bottom: 2px solid var(--navy);">
-                    <th style="text-align: left; padding: 12px; color: var(--navy);">Milestone</th>
-                    <th style="text-align: center; padding: 12px; color: var(--navy);">Amount</th>
-                    <th style="text-align: right; padding: 12px; color: var(--navy);">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr style="border-bottom: 1px solid var(--slate-200);">
-                    <td style="padding: 15px;"><strong>Phase I: Engagement & Data Setup</strong><br><span style="color: #64748B; font-size: 12px;">Covers research, VDR access, & underwriting prep.</span></td>
-                    <td style="padding: 15px; text-align: center; font-weight: 700;">£500.00</td>
-                    <td style="padding: 15px; text-align: right;">
-                        <a href="https://estatespark.co.uk/inv1" style="background: var(--navy); color: #fff; padding: 8px 16px; text-decoration: none; font-size: 11px; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Get Invoice</a>
-                    </td>
-                </tr>
-                <tr style="border-bottom: 1px solid var(--slate-200);">
-                    <td style="padding: 15px;"><strong>Phase II: Acquisition Success Fee</strong><br><span style="color: #64748B; font-size: 12px;">Payable upon successful Exchange of Contracts.</span></td>
-                    <td style="padding: 15px; text-align: center; font-weight: 700;">£1,500.00</td>
-                    <td style="padding: 15px; text-align: right;">
-                        <a href="https://estatespark.co.uk/inv2" style="background: var(--gold); color: #fff; padding: 8px 16px; text-decoration: none; font-size: 11px; font-weight: 700; border-radius: 4px; text-transform: uppercase;">Get Invoice</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <p style="font-size: 12px; color: #475569; font-style: italic;">Note: All payments are independent of solicitor completion statements and represent direct commercial debt for services rendered.</p>
-    </section>
-    <section>
-        <h2>3. Independent Status</h2>
-        <p>The Consultant provides services as an independent technical consultant. The Consultant is not an estate agent, nor is the Consultant providing regulated financial or legal advice. 
-					<br>The Client maintains full discretion over all property acquisition decisions and is solely responsible for engaging appropriate conveyancing and legal representation for the completion of the transaction.</p>
-    </section>
-
-    <section>
-        <h2>4. Confidentiality</h2>
-        <p>All documents, data, and analytical reports provided by the Consultant remain the intellectual property of the Consultant until the full Acquisition Success Fee has been settled. Both parties agree to maintain the strict confidentiality of the transaction details.</p>
-    </section>
-
-    <section>
-        <h2>5. Anti-Circumvention & Fee Protection</h2>
-        <p>The Client acknowledges that the Consultant has invested significant time and resources in identifying, underwriting, and preparing the Asset for acquisition. The Client agrees that:</p>
-        <ul>
-            <li><strong>Non-Circumvention:</strong> The Client shall not, for a period of 12 months from the date of this Agreement, attempt to bypass the Consultant by engaging directly with the seller or the listing agent to acquire the Asset (or any other asset introduced by the Consultant) without the Consultant’s written consent.</li>
-					
-					<br>
-            <li><strong>Fee Entitlement:</strong> Should the Client, or any associate or entity acting on behalf of the Client, acquire the Asset within 12 months of its introduction by the Consultant, the full Acquisition Success Fee of £1,500 shall become immediately due and payable to the Consultant, regardless of whether the Consultant was involved in the final stages of the transaction.</li>
-					
-					<br>
-            <li><strong>Evidence of Breach:</strong> Any direct communication between the Client and the seller or agent regarding the Asset, without the Consultant’s prior involvement, shall be deemed a breach of this Agreement and shall trigger the immediate liability of the Success Fee.</li>
-        </ul>
-    </section>
-
-	<section style="margin: 30px 0; font-family: 'Inter', sans-serif; color: #1e293b; line-height: 1.6;">
-    <h2 style="font-size: 18px; background: #0f172a; color: #ffffff; padding: 10px 20px; display: inline-block; border-radius: 4px; margin-bottom: 20px;">
-        6. Governing Law, Jurisdiction, and Fee Recovery
-    </h2>
-
-    <p style="margin-bottom: 15px;">
-        <strong style="color: #0f172a;">Governing Law:</strong> This Agreement shall be governed by, and construed in accordance with, the laws of England and Wales.
-    </p>
-
-    <p style="margin-bottom: 15px;">
-        <strong style="color: #0f172a;">Jurisdiction:</strong> The parties irrevocably agree that the courts of England and Wales shall have exclusive jurisdiction to settle any dispute or claim arising out of or in connection with this Agreement.
-    </p>
-
-    <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 6px;">
-        <strong style="display: block; margin-bottom: 10px; color: #0f172a; text-transform: uppercase; font-size: 14px;">Fee Recovery and Enforcement:</strong>
-        <p style="font-size: 14px; margin-bottom: 15px;">In the event of a breach of Section 5 (Anti-Circumvention), the following enforcement protocol shall apply:</p>
-        
-        <ol style="padding-left: 20px; font-size: 14px; margin: 0;">
-            <li style="margin-bottom: 10px;"><strong>Formal Letter Before Action:</strong> The Consultant shall issue a formal written notice via email and registered post demanding immediate payment of the outstanding Acquisition Success Fee.</li>
-            <li style="margin-bottom: 10px;"><strong>Money Claim Online (MCOL):</strong> Should the Client fail to satisfy the debt within the period specified in the Letter Before Action, the Consultant is authorized to initiate legal proceedings via the UK Government’s <strong>Money Claim Online (MCOL)</strong> service.</li>
-            <li style="margin-bottom: 0;"><strong>Indemnity for Legal Costs:</strong> In any successful claim for the recovery of unpaid fees, the Client acknowledges that the Consultant shall be entitled to recover all reasonable legal costs, court filing fees, and administrative expenses incurred in the recovery of said debt. These costs shall be added to the judgment debt and shall be fully payable by the Client.</li>
-        </ol>
-    </div>
-</section>
+<section>
+	<br>
 	
-	<section id="signature-section" style="margin-top: 40px; padding: 30px; border: 1px solid #E2E8F0; border-radius: 8px;">
-    <h2 style="font-size: 18px; color:#FFFFFF; border-bottom: 2px solid var(--navy); padding-bottom: 10px;">🏛️ 07. AUTHORITY & BINDING FRAMEWORK</h2>
-    <p style="font-size: 14px; color: #475569; line-height: 1.6; margin-bottom: 25px;">
-        Acceptance of the introduced buyer’s profile details via tracking email channels or signature execution marks immediate contractual authorization under the jurisdiction of the laws of England and Wales.
-    </p>
-
-    <div style="background: #FFF1F2; border: 1px dashed #BE123C; padding: 15px; border-radius: 4px; margin-bottom: 20px;">
-        <p style="font-size: 14px; color: #BE123C; margin: 0 0 10px 0; font-weight: 600;">Instruction to Agent: Authenticate parameters before signing.</p>
-        <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer; font-size: 13.5px; font-weight: 700; color: #0F172A;">
-            <input type="checkbox" id="authCheck" style="margin-top: 3px; transform: scale(1.25);" required>
-            <span>I, the Client, formally execute this Agreement and bind our tracking ledger parameters.</span>
-        </label>
-    </div>
-
-    <form id="sparkFormspreeOutbox" action="https://formspree.io/f/mwvzpyqy" method="POST" style="display:none;">
-        <input type="hidden" name="Subject_Line" value="URGENT: Signed Consultancy Agreement">
-        <input type="hidden" name="Drawn_Signature_Link" id="hiddenSignatureData">
-    </form>
-
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
-        <div>
-            <strong>For Consultant:</strong>
-            <div style="font-family: 'Brush Script MT', cursive; font-size: 24px; color: #0F172A; margin-top: 20px; height: 40px;">Awais Razia</div>
-            <div style="width: 100%; height: 1px; background-color: #000;"></div>
-            <span style="font-weight: 700; font-size: 12px;">Principal Analyst</span>
-        </div>
-        <div>
-            <strong>For Client:</strong>
-            <div style="position: relative; width: 100%; height: 80px; background-color: #F8FAFC; border: 1px dashed #A8864D; border-radius: 4px; margin-top: 10px; overflow: hidden;">
-                <canvas id="adamSignaturePad" style="width:100%; height:100%; cursor: crosshair; touch-action: none;"></canvas>
-            </div>
-            <button type="button" id="clearPadBtn" style="border: 1px solid #CBD5E1; padding: 2px 8px; font-size: 10px; cursor: pointer; margin-top: 5px;">Clear Board</button>
-            <div style="width: 100%; height: 1px; background-color: #000; margin: 10px 0;"></div>
-            <span style="font-weight: 700; font-size: 12px;">Authorized Signature</span>
-        </div>
-    </div>
-
-    <button type="button" id="submitAgreementBtn" style="width: 100%; background: var(--gold); color: white; border: none; padding: 15px; margin-top: 30px; font-weight: 700; cursor: pointer; border-radius: 4px;">
-        EXECUTE & SECURE AGREEMENT
-    </button>
-    <div id="executionReceipt" style="margin-top: 15px; font-family: monospace; font-size: 12px; color: #059669; font-weight: 700; display: none; text-align: center;"></div>
-</section>
-
-<script>
-    const canvas = document.getElementById('adamSignaturePad');
-    const ctx = canvas.getContext('2d');
-    const submitBtn = document.getElementById('submitAgreementBtn');
-    
-    // Initialize Canvas
-    function initCanvas() {
-        const rect = canvas.getBoundingClientRect();
-        canvas.width = rect.width;
-        canvas.height = rect.height;
-        ctx.strokeStyle = '#0F172A';
-        ctx.lineWidth = 2.5;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-    }
-    initCanvas();
-    window.addEventListener('resize', initCanvas);
-
-    let isDrawing = false;
-    const getPos = (e) => {
-        const rect = canvas.getBoundingClientRect();
-        const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-        const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-        return { x: clientX - rect.left, y: clientY - rect.top };
-    };
-
-    canvas.addEventListener('mousedown', (e) => { isDrawing = true; ctx.beginPath(); ctx.moveTo(getPos(e).x, getPos(e).y); });
-    canvas.addEventListener('mousemove', (e) => { if (isDrawing) { ctx.lineTo(getPos(e).x, getPos(e).y); ctx.stroke(); }});
-    canvas.addEventListener('mouseup', () => isDrawing = false);
-    canvas.addEventListener('touchstart', (e) => { e.preventDefault(); isDrawing = true; ctx.beginPath(); ctx.moveTo(getPos(e).x, getPos(e).y); });
-    canvas.addEventListener('touchmove', (e) => { e.preventDefault(); if (isDrawing) { ctx.lineTo(getPos(e).x, getPos(e).y); ctx.stroke(); }});
-    document.getElementById('clearPadBtn').addEventListener('click', () => ctx.clearRect(0,0,canvas.width,canvas.height));
-
-    submitBtn.addEventListener('click', async () => {
-        if(!document.getElementById('authCheck').checked) return alert('Please authorize the parameters first.');
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+        <h2>🏛️ 1. Executive Summary & Core Investment Thesis</h2>
         
-        submitBtn.disabled = true;
-        submitBtn.innerText = "TRANSMITTING TO SECURE OUTBOX...";
-        
-        document.getElementById('hiddenSignatureData').value = canvas.toDataURL('image/png');
-        const form = document.getElementById('sparkFormspreeOutbox');
-        
-        try {
-            await fetch(form.action, { method: 'POST', body: new FormData(form) });
-            canvas.style.pointerEvents = 'none';
-            submitBtn.style.backgroundColor = "#059669";
-            submitBtn.innerText = "✓ AGREEMENT EXECUTED & SECURED";
-            document.getElementById('executionReceipt').style.display = 'block';
-            document.getElementById('executionReceipt').innerText = "AUDIT ID: ES-" + Date.now();
-        } catch(e) {
-            alert("Upload failed. Please check your connection.");
-            submitBtn.disabled = false;
-        }
-    });
-</script>
+	<p>An exceptional, rare opportunity to acquire a 100% clean freehold, stabilized purpose-built student accommodation (PBSA) block asset situated within an exclusive, high-barrier-to-entry West London corridor.
+		<br>
+		<br>
+		The asset delivers immediate, defensive cash flows underpinned by a structural supply-demand imbalance in London's student housing sector, where over 70% of full-time students cannot access university or private sector beds 
+</p>
+	
+	<h2>2. Key Asset & Transaction Metrics</h2>
+	
+	<ul class="metrics-list">
+    <li>
+        <span class="metrics-label">Asset Price</span>
+        <span class="metrics-value">£29,000,000 (Gross via clean SPV or asset sale)</span>
+    </li>
+    <li>
+			<br>
+        <span class="metrics-label">Capacity</span>
+        <span class="metrics-value">84 high-specification, fully self-contained operational studio beds</span>
+    </li>
+    <li>
+			<br>
+        <span class="metrics-label">Configuration</span>
+        <span class="metrics-value">Arranged over six storeys with an integrated student reception desk</span>
+    </li>
+    <li>
+			<br>
+        <span class="metrics-label">Occupancy</span>
+        <span class="metrics-value">100% structurally full since launch with consecutive annual waiting lists</span>
+    </li>
+    <li>
+			<br>
+        <span class="metrics-label">Rental Growth</span>
+        <span class="metrics-value">Proven historic rental expansion averaging over 4.0% per annum</span>
+    </li>
+    <li>
+			<br>
+        <span class="metrics-label">Ancillary Income</span>
+        <span class="metrics-value">Ground-floor commercial unit (1,036 sq ft) generating £45,000 per annum</span>
+    </li>
+    <li>
+			<br>
+        <span class="metrics-label">Tenure</span>
+        <span class="metrics-value">100% Absolute Freehold Title</span>
+    </li>
+</ul>
+	
+	
+	<h2>3. Premium Structural & Location Attributes</h2>
+	<br>
+
+<span class="metrics-value"><strong>Demographic Magnet:</strong> Elite connectivity profile (PTAL Rating: 5) providing rapid walking and transit access to London's global top-tier universities, including Imperial College London, UCL, LSE, and King's College London.</span>
+<br>
+	<br>
+<span class="metrics-value"><strong>Amenity Architecture:</strong> Fully gated, secure infrastructure featuring premium communal amenities, including a central landscaped courtyard, dedicated study zones, a common lounge/games hub, secure bike storage, and high-speed managed Wi-Fi networks .</span>
+<br>
+	<br>
+<span class="metrics-value"><strong>Micro-Market Defense:</strong> Located within a high-net-worth residential district , insulating the land value and providing an exceptional underlying capital preservation wrapper.</span>
+<br>
+	<br>
+<h2>4. Institutional Value-Add & Reversionary Horizon</h2>
+
+	<br>
+<span class="metrics-value"><strong>Operational Optimization:</strong>Existing rents present immediate reversionary upside potential upon upcoming academic lifecycle renewals to align with current market-leading rental tones.</span>
+<br>
+	<br>
+<span class="metrics-value"><strong>Summer Monetization:</strong>Flexible planning profile permits optimized seasonal utilization for short-term/corporate lets during academic holiday windows to capture hyper-profitable hospitality yield premiums.</span>
+<br>
+	<br>
+<span class="metrics-value"><strong>CapEx Mitigation:</strong> Fully optimized, turnkey asset layout requiring zero near-term structural or envelope capital expenditure.</span>
+<br>
+	<br>
+	
+	<div class="section-title"><H2>5. Transaction Framework & Accelerated Execution Timeline</H2>
+		</div>
+<p>The vendor is strictly targeting institutional, direct equity-backed buyers capable of operating within an accelerated due diligence and definitive contract exchange window. Clean title documentation, historic rent rolls, verified tenancy schedules, and structural compliance verifications are fully prepared in an active virtual data room.</p>
+<p>Asset identification, exact location coordinates, and full data room access are strictly contingent upon the execution of a standard Non-Circumvention, Non-Disclosure Agreement (NCNDA).</p>
